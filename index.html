@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+  <title>PVMSolar - Gestión de flota</title>
+</head>
+<body>
+  <nav id="navbar" class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PVMSOlar</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul id="principal" class="nav navbar-nav">
+          <li id="conductor"><a href="#">Camiones</a></li>
+          <li id="ruta"><a href="#">Remolques</a></li>
+          <li id="camion"><a href="#">Talleres</a></li>
+          <li id="remolque"><a href="#">Aseguradoras</a></li>
+          <li id="alertas"><a href="#">Lista de Alertas</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ul id="listaDatos"></ul>
+
+  <script src="js/vendor/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=es">
+  </script>
+  <script type="text/javascript" src="js/vendor/gmap3.min.js"></script>
+  <script type="text/javascript" src="js/app/verificarEstado.js"></script>
+  <script type="text/javascript" src="js/app/ajax.js"></script>
+  <script type="text/javascript" src="js/app/ui.js"></script>
+  <script type="text/javascript" src="js/app/ruta.js"></script>
+  <script type="text/javascript" src="js/app/events.js"></script>
+  <script type="text/javascript" src="js/app/controller.js"></script>
+  <script type="text/javascript" src="js/app/main.js"></script>
+  </body>
+</html>
