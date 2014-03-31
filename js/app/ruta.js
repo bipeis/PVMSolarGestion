@@ -12,7 +12,7 @@ APP.Ruta = (function(){
         $.ajax({
                 url : 'data/ruta.json',
                 cache : false,
-                success : function(data, textStatus, jqXHR){
+                success : function(data, textStatus, jqXHRr){
                           var recorrido = [];
                           $.ajax({
                             url: data.kml ,

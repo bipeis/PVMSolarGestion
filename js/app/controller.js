@@ -48,11 +48,21 @@ APP.Controller = (function() {
         });
     };
 
-    var showCamion = function(e){
+    /*var showCamion = function(e){
         APP.UI.mostrarActivo(this);
         APP.Pedir.getInfo(function(camion, textStatus, jqXHR){
             APP.UI.mostrarCamion(camion);
         }, 'data/camion.json');
+    };
+*/
+    var showTractoras = function(e){
+        APP.UI.mostrarActivo(this);
+                  console.log("tractoras de antes de getTractoras");
+        APP.Pedir.getTractoras(function(tractoras, textStatus, jqXHR){
+            console.log("tractoras de getTractoras");
+            console.log(tractoras);
+            APP.UI.mostrarTractoras(tractoras);
+        }, 'data/tractoras.json');
     };
 
     var showRemolque = function(e){
@@ -67,7 +77,8 @@ APP.Controller = (function() {
         nuevasAlertas : nuevasAlertas,
         showDriver : showDriver,
         showRuta : showRuta,
-        showCamion : showCamion,
+
+        showTractoras : showTractoras,
         showRemolque : showRemolque,
         init : init
 

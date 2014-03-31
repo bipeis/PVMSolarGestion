@@ -92,25 +92,57 @@ APP.UI = (function(lng, undefined) {
         }, 100);
     };
 
-    var mostrarCamion = function(camion){
+ /*   var mostrarCamion = function(camion){
         console.log("Pintar camion");
         borrarPantalla(0);
 
+        //Formulario de búsqueda de un camión del listado
         var formBuscarCamion = $("<form id='formBuscarCamion' class='navbar-form navbar-left' " +
             "role='search'>  <div class='form-group'>  <input type='text' class='form-control' " +
             "placeholder='Matricula'> </div>" + " <button type='submit' class='btn btn-default'>Buscar</button></form>");
         formBuscarCamion.insertAfter("#listaDatos");
         var divListaCamion = $("<div id='listado' class='list-group'><a href='#'' class='list-group-item'>Identificador: " + camion.idCamion + "</a><a href='#'' id='listado' class='list-group-item'>Matricula: " + camion.matricula + "</a></div>");
         divListaCamion.insertAfter($("#listaDatos"));
+
+        //Listado de camiones
+        var listaCamiones;
+
+        APP.Ruta.getRuta(function(camiones){
+            listaCamiones = camiones;
+
+
+        });
+*/
+    var mostrarTractoras = function(tractoras){
+        console.log("Pintar tractoras");
+        borrarPantalla(0);
+
+        //Formulario de búsqueda de un camión del listado
+        var formBuscarTractora = $("<form id='formBuscarTractora' class='navbar-form navbar-left' " +
+            "role='search'>  <div class='form-group'>  <input type='text' class='form-control' " +
+            "placeholder='Matricula'> </div>" + " <button type='submit' class='btn btn-default'>Buscar</button></form>");
+        formBuscarTractora.insertAfter("#listaDatos");
+
+         //Listado de tractoras
+         var stringListado = "<ul id='listado' class='list-group'>";
+         for (var i = tractoras.length - 1; i >= 0; i--) {
+             stringListado+= "<li class='list-group-item'>Identificador: " + tractoras[i].idCamion + "     Matricula: " + tractoras[i].matricula + "</li>";
+         }
+         stringListado+="</ul>";
+        var divListaCamion = $(stringListado);
+        divListaCamion.insertAfter($("#listaDatos"));
+
+
     };
 
     var borrarPantalla = function(mapa){
-        var $ul = $('#listaDatos');
-        $ul.empty();
+        //var $ul = $('#listaDatos');
+        //$ul.empty();
         var $divListado = $('#listado');
         $divListado.remove();
-        var $divBusqueda = $('#formBuscarCamion');
+        var $divBusqueda = $('#formBuscarTractora');
         $divBusqueda.remove();
+
         if(mapa===0){eliminarMapa();}
 
     };
@@ -150,8 +182,8 @@ APP.UI = (function(lng, undefined) {
     };
 
     var esconderAlertas = function(alertas) {
-        var $ul = $('#listaDatos');
-        $ul.empty();
+        //var $ul = $('#listaDatos');
+        //$ul.empty();
     };
 
     var avisoAlertas = function(nuevasAlertas) {
@@ -176,7 +208,7 @@ APP.UI = (function(lng, undefined) {
         esconderAlertas : esconderAlertas,
         mostrarConductor : mostrarConductor,
         mostrarRuta : mostrarRuta,
-        mostrarCamion : mostrarCamion,
+        mostrarTractoras : mostrarTractoras,
         mostrarRemolque : mostrarRemolque,
         avisoAlertas : avisoAlertas,
         mostrarActivo : mostrarActivo
