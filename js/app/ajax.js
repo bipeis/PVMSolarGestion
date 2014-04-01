@@ -2,9 +2,9 @@ var APP = APP||{};
 APP.Pedir = (function(){
     "use strict";
 
-    var getInfo = function(devolverInfo, rutaInfo){
+    var getInfo = function(devolverInfo, remolqueInfo){
         $.ajax({
-                url : rutaInfo,
+                url : remolqueInfo,
                 cache : false,
                 dataType : 'json',
                 success : devolverInfo,

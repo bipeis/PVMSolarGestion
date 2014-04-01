@@ -1,14 +1,51 @@
 [
     {
-        "idCamion" : "00001",
+        "idTractora" : "00001",
         "matricula" : "674532dfx"
     },
     {
-        "idCamion" : "00002",
+        "idTractora" : "00002",
         "matricula" : "672532dfx"
     },
     {
-        "idCamion" : "00003",
+        "idTractora" : "00003",
+        "matricula" : "174532dfx"
+    },
+
+    {
+        "idTractora" : "00001",
+        "matricula" : "674532dfx"
+    },
+    {
+        "idTractora" : "00002",
+        "matricula" : "672532dfx"
+    },
+    {
+        "idTractora" : "00003",
+        "matricula" : "174532dfx"
+    },
+    {
+        "idTractora" : "00001",
+        "matricula" : "674532dfx"
+    },
+    {
+        "idTractora" : "00002",
+        "matricula" : "672532dfx"
+    },
+    {
+        "idTractora" : "00003",
+        "matricula" : "174532dfx"
+    },
+    {
+        "idTractora" : "00001",
+        "matricula" : "674532dfx"
+    },
+    {
+        "idTractora" : "00002",
+        "matricula" : "672532dfx"
+    },
+    {
+        "idTractora" : "00003",
         "matricula" : "174532dfx"
     }
 ]
