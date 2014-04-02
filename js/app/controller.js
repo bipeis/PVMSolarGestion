@@ -2,14 +2,6 @@ var APP = APP||{};
 APP.Controller = (function() {
     "use strict";
 
-    var showremolque = function(e){
-        APP.UI.mostrarActivo(this);
-        APP.remolque.getremolque(function(recorrido, textStatus, jqXHR){
-            console.log(recorrido);
-            APP.UI.mostrarremolque(recorrido);
-        });
-    };
-
     var showTractoras = function(e){
         APP.UI.mostrarActivo(this);
                   console.log("tractoras de antes de getTractoras");
@@ -18,6 +10,16 @@ APP.Controller = (function() {
             console.log(tractoras);
             APP.UI.mostrarTractoras(tractoras);
         }, 'data/tractoras.json');
+    };
+
+    var showRemolques = function(e){
+        APP.UI.mostrarActivo(this);
+                  console.log("remolques de antes de getRemolques");
+        APP.Pedir.getRemolques(function(remolques, textStatus, jqXHR){
+            console.log("remolques de getTractoras");
+            console.log(remolques);
+            APP.UI.mostrarRemolques(remolques);
+        }, 'data/remolques.json');
     };
 
     var showRemolque = function(e){
@@ -30,15 +32,15 @@ APP.Controller = (function() {
     var showTractoraFicha = function(e){
         console.log("showTractoraFicha");
         APP.UI.mostrarActivo(this);
-        APP.Pedir.getInfo(function(remolque, textStatus, jqXHR){
-            APP.UI.mostrarRemolque(remolque);
-        }, 'data/remolque.json');
+        APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
+            APP.UI.mostrarTractoraFicha(tractora);
+        }, 'data/tractora.json');
     };
 
     return {
-        showremolque : showremolque,
         showTractoras : showTractoras,
         showRemolque : showRemolque,
-        showTractoraFicha : showTractoraFicha
+        showTractoraFicha : showTractoraFicha,
+        showRemolques : showRemolques
     };
 })();

@@ -16,12 +16,32 @@ APP.Pedir = (function(){
         console.log(errorThrown);
     };
 
-    var getTractoras = function(devolverInfo, tractorasLista){
+    var getTractoras = function(devolverTractoras, tractorasLista){
         $.ajax({
                 url : tractorasLista,
                 cache : false,
                 dataType : 'json',
-                success : devolverInfo,
+                success : devolverTractoras,
+                error : errorAjax
+        });
+    };
+
+    var getRemolques = function(devolverRemolques, remolquesLista){
+        $.ajax({
+                url : remolquesLista,
+                cache : false,
+                dataType : 'json',
+                success : devolverRemolques,
+                error : errorAjax
+        });
+    };
+
+    var getTractora = function(devolverTractoraDatos, tractoraDatos){
+        $.ajax({
+                url : tractoraDatos,
+                cache : false,
+                dataType : 'json',
+                success : devolverTractoraDatos,
                 error : errorAjax
         });
     };
@@ -29,7 +49,9 @@ APP.Pedir = (function(){
 
     return{
         getInfo : getInfo,
-        getTractoras : getTractoras
+        getTractoras : getTractoras,
+        getTractora : getTractora,
+        getRemolques : getRemolques
     };
 
 })();
