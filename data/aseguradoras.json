@@ -1,0 +1,12 @@
+[
+    {
+        "idAseguradora" : "00001",
+        "nombre" : "Taller Central",
+        "direccion" : "poligono ma"
+    },
+    {
+        "idAseguradora" : "00002",
+        "nombre" : "Pepe y paco",
+        "direccion" : "poligono ma"
+    }
+]

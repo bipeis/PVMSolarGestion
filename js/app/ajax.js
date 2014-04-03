@@ -36,6 +36,16 @@ APP.Pedir = (function(){
         });
     };
 
+    var getTalleres = function(devolverTalleres, talleresLista){
+        $.ajax({
+                url : talleresLista,
+                cache : false,
+                dataType : 'json',
+                success : devolverTalleres,
+                error : errorAjax
+        });
+    };
+
     var getTractora = function(devolverTractoraDatos, tractoraDatos){
         $.ajax({
                 url : tractoraDatos,
@@ -46,12 +56,35 @@ APP.Pedir = (function(){
         });
     };
 
+    var getRemolque = function(devolverRemolqueDatos, remolqueDatos){
+        $.ajax({
+                url : remolqueDatos,
+                cache : false,
+                dataType : 'json',
+                success : devolverRemolqueDatos,
+                error : errorAjax
+        });
+    };
+
+    var getTaller = function(devolverTallerDatos, tallerDatos){
+        $.ajax({
+                url : tallerDatos,
+                cache : false,
+                dataType : 'json',
+                success : devolverTallerDatos,
+                error : errorAjax
+        });
+    };
+
 
     return{
         getInfo : getInfo,
-        getTractoras : getTractoras,
         getTractora : getTractora,
-        getRemolques : getRemolques
+        getRemolque : getRemolque,
+        getRemolques : getRemolques,
+        getTractoras : getTractoras,
+        getTalleres : getTalleres,
+        getTaller : getTaller
     };
 
 })();

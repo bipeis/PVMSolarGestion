@@ -1,0 +1,12 @@
+[
+    {
+        "idTaller" : "00001",
+        "nombre" : "Taller Central",
+        "direccion" : "poligono ma"
+    },
+    {
+        "idTaller" : "00002",
+        "nombre" : "Pepe y paco",
+        "direccion" : "poligono ma"
+    }
+]
