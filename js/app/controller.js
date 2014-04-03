@@ -4,12 +4,13 @@ APP.Controller = (function() {
 
     var showTractoras = function(e){
         APP.UI.mostrarActivo(this);
-                  console.log("tractoras de antes de getTractoras");
-        APP.Pedir.getTractoras(function(tractoras, textStatus, jqXHR){
+        console.log("tractoras de antes de getTractoras");
+        APP.Pedir.getTractorasPHP(function(tractoras, textStatus, jqXHR){
             console.log("tractoras de getTractoras");
             console.log(tractoras);
             APP.UI.mostrarTractoras(tractoras);
         }, 'data/tractoras.json');
+console.log("fin Controller");
     };
 
     var showRemolques = function(e){
@@ -20,6 +21,7 @@ APP.Controller = (function() {
             console.log(remolques);
             APP.UI.mostrarRemolques(remolques);
         }, 'data/remolques.json');
+
     };
 
     var showTalleres = function(e){

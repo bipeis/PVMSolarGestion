@@ -8,7 +8,7 @@
         $(document).on('click', '#listadoTractoras .btn', APP.Controller.showTractoraFicha);
         $(document).on('click', '#listadoRemolques .btn', APP.Controller.showRemolqueFicha);
         $(document).on('click', '#listadoTalleres .btn', APP.Controller.showTallerFicha);
-        $(document).on('click', '#listadoAseguradoras .btn', APP.Controller.showAseguradoraFicha);
+        //$(document).on('click', '#listadoAseguradoras .btn', APP.Controller.showAseguradoraFicha);
 
 
     });

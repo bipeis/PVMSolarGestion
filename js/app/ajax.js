@@ -26,6 +26,16 @@ APP.Pedir = (function(){
         });
     };
 
+    var getTractorasPHP = function(devolverTractoras, tractorasLista){
+        $.ajax({
+                url : 'data/talleres.php',
+                cache : false,
+                dataType : 'aplication/json',
+                success : devolverTractoras,
+                error : errorAjax
+        });
+    };
+
     var getRemolques = function(devolverRemolques, remolquesLista){
         $.ajax({
                 url : remolquesLista,
@@ -83,6 +93,7 @@ APP.Pedir = (function(){
         getRemolque : getRemolque,
         getRemolques : getRemolques,
         getTractoras : getTractoras,
+        getTractorasPHP : getTractorasPHP,
         getTalleres : getTalleres,
         getTaller : getTaller
     };
