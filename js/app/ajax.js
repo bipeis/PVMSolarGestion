@@ -30,7 +30,7 @@ APP.Pedir = (function(){
         $.ajax({
                 url : 'data/talleres.php',
                 cache : false,
-                dataType : 'aplication/json',
+                contentType: "application/json",
                 success : devolverTractoras,
                 error : errorAjax
         });

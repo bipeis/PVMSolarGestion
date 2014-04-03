@@ -7,8 +7,15 @@ APP.Controller = (function() {
         console.log("tractoras de antes de getTractoras");
         APP.Pedir.getTractorasPHP(function(tractoras, textStatus, jqXHR){
             console.log("tractoras de getTractoras");
+            console.log("jqXHR");
+            console.log(jqXHR);
+            console.log("tractoras");
             console.log(tractoras);
-            APP.UI.mostrarTractoras(tractoras);
+            console.log(textStatus);
+                                var respuesta = JSON.parse(jqXHR.responseText);
+                    console.log(respuesta);
+            //console.log(tractoras);
+            //APP.UI.mostrarTractoras(tractoras);
         }, 'data/tractoras.json');
 console.log("fin Controller");
     };
