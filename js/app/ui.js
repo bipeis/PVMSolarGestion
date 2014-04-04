@@ -35,15 +35,15 @@ APP.UI = (function(lng, undefined) {
             "placeholder='Matricula'> </div>" + " <button type='submit' class='btn btn-default'>Buscar</button></form></div>");
         formBuscarTractora.insertAfter("#listaDatos");
 
-
          //Listado de tractoras
          var stringTabla = "<div id='divTabla'><h1>Tractoras</h1> <table id='listadoTractoras' class='table table-striped'>" +
             "<thead> <tr> <th>ID</th> <th>Matricula</th> <th>Seguro</th> <th>Actions</th> </tr> </thead>" +
             "<tbody>";
-         for (var j = tractoras.length - 1; j >= 0; j--) {
-             stringTabla+= "<tr> <td>"+ tractoras[j].idTractora +
-              "</td> <td>" + tractoras[j].matricula + "</td> <td>" +
-               "</td> <td> <button class='btn btn-mini'>Ficha</button>  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
+         for (var j = 0; j<=tractoras.length - 1; j++) {
+             stringTabla+= "<tr> <td>"+ tractoras[j].IdTractora +
+              "</td> <td>" + tractoras[j].Matricula + "</td> <td>" +
+               "</td> <td> <button data-id=" + tractoras[j].IdTractora + " " +
+               "class='btn btn-mini'>Ficha</button>  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
          }
          stringTabla+="</tbody> </table></div>";
         var divTablaTractoras = $(stringTabla);
@@ -66,9 +66,9 @@ APP.UI = (function(lng, undefined) {
          var stringTabla = "<div id='divTabla'><h1>Remolques</h1> <table id='listadoRemolques' class='table table-striped'>" +
             "<thead> <tr> <th>ID</th> <th>Matricula</th> <th>Seguro</th> <th>Actions</th> </tr> </thead>" +
             "<tbody>";
-         for (var j = remolques.length - 1; j >= 0; j--) {
-             stringTabla+= "<tr> <td>"+ remolques[j].idRemolque +
-              "</td> <td>" + remolques[j].matricula + "</td> <td>" +
+         for (var j = 0; j<=remolques.length - 1; j++) {
+             stringTabla+= "<tr> <td>"+ remolques[j].IdRemolque +
+              "</td> <td>" + remolques[j].Matricula + "</td> <td>" +
                "</td> <td> <button class='btn btn-mini'>Ficha</button>  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
          }
          stringTabla+="</tbody> </table></div>";
@@ -91,9 +91,33 @@ APP.UI = (function(lng, undefined) {
          var stringTabla = "<div id='divTabla'><h1>Talleres</h1> <table id='listadoTalleres' class='table table-striped'>" +
             "<thead> <tr> <th>ID</th> <th>Nombre</th> <th>Direccion</th> <th>Actions</th> </tr> </thead>" +
             "<tbody>";
-         for (var j = talleres.length - 1; j >= 0; j--) {
-             stringTabla+= "<tr> <td>"+ talleres[j].idTaller +
-              "</td> <td>" + talleres[j].nombre + "</td> <td>" +
+         for (var j = 0; j<=talleres.length - 1; j++) {
+             stringTabla+= "<tr> <td>"+ talleres[j].IdTaller +
+              "</td> <td>" + talleres[j].Nombre + "</td> <td>" +
+               "</td> <td> <button class='btn btn-mini'>Ficha</button>  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
+         }
+         stringTabla+="</tbody> </table></div>";
+        var divTabla = $(stringTabla);
+        divTabla.insertAfter($("#formBusqueda"));
+
+    };
+
+    var mostrarAseguradoras = function(aseguradoras){
+        borrarPantalla();
+
+        //Formulario de búsqueda de una aseguradora del listado
+        var formBuscarAseguradora = $("<div id='formBusqueda'><form id='formBuscarAseguradora' class='navbar-form navbar-left' " +
+            "role='search'>  <div class='form-group'>  <input type='text' class='form-control' " +
+            "placeholder='Nombre'> </div>" + " <button type='submit' class='btn btn-default'>Buscar</button></form></div>");
+        formBuscarAseguradora.insertAfter("#listaDatos");
+
+         //Listado de aseguradoras
+         var stringTabla = "<div id='divTabla'><h1>Aseguradoras</h1> <table id='listadoAseguradoras' class='table table-striped'>" +
+            "<thead> <tr> <th>ID</th> <th>Nombre</th> <th>Direccion</th> <th>Actions</th> </tr> </thead>" +
+            "<tbody>";
+         for (var j = 0; j<=aseguradoras.length - 1; j++) {
+             stringTabla+= "<tr> <td>"+ aseguradoras[j].IdAseguradora +
+              "</td> <td>" + aseguradoras[j].Nombre + "</td> <td>" +
                "</td> <td> <button class='btn btn-mini'>Ficha</button>  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
          }
          stringTabla+="</tbody> </table></div>";
@@ -104,6 +128,8 @@ APP.UI = (function(lng, undefined) {
 
     var mostrarTractoraFicha = function(tractora){
         console.log("Pintar tractora");
+        console.log(tractora);
+
         borrarPantalla();
 
          //Ficha de tractora
@@ -111,13 +137,13 @@ APP.UI = (function(lng, undefined) {
                             "<div class='form-group'>   </div>";
 
             stringForm+="<label class='label label-default' for='idTractora'>IdTractora:</label>";
-            stringForm+= "<input id='idTractora' type='text' class='form-control' placeholder='idTractora' value=" + tractora.idTractora + " > " ;
+            stringForm+= "<input id='idTractora' type='text' class='form-control' placeholder='idTractora' value=" + tractora[0].IdTractora + " > " ;
             stringForm+="<label class='label label-default' for='matricula'>matricula:</label>";
-            stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora.matricula + " > " ;
+            stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora[0].Matricula + " > " ;
             stringForm+="<label class='label label-default' for='seguro'>seguro:</label>";
-            stringForm+= "<input id='seguro' type='text' class='form-control' placeholder='seguro' value=" + tractora.seguro + " > " ;
+            stringForm+= "<input id='seguro' type='text' class='form-control' placeholder='seguro' value=" + tractora[0].seguro + " > " ;
             stringForm+="<label class='label label-default' for='aseguradora'>aseguradora:</label>";
-            stringForm+= "<input id='aseguradora' type='text' class='form-control' placeholder='aseguradora' value=" + tractora.aseguradora + " > " ;
+            stringForm+= "<input id='aseguradora' type='text' class='form-control' placeholder='aseguradora' value=" + tractora[0].aseguradora + " > " ;
 
 
             stringForm+="<button type='submit' class='btn btn-default'>Submit</button></form></div>";
@@ -193,7 +219,8 @@ APP.UI = (function(lng, undefined) {
         mostrarRemolqueFicha : mostrarRemolqueFicha,
         mostrarTallerFicha : mostrarTallerFicha,
         mostrarRemolques : mostrarRemolques,
-        mostrarTalleres : mostrarTalleres
+        mostrarTalleres : mostrarTalleres,
+        mostrarAseguradoras : mostrarAseguradoras
     };
 
 })();

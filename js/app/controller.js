@@ -4,51 +4,33 @@ APP.Controller = (function() {
 
     var showTractoras = function(e){
         APP.UI.mostrarActivo(this);
-        console.log("tractoras de antes de getTractoras");
         APP.Pedir.getTractorasPHP(function(tractoras, textStatus, jqXHR){
-            console.log("tractoras de getTractoras");
-            console.log("jqXHR");
-            console.log(jqXHR);
-            console.log("tractoras");
-            console.log(tractoras);
-            console.log(textStatus);
-                                var respuesta = JSON.parse(jqXHR.responseText);
-                    console.log(respuesta);
-            //console.log(tractoras);
-            //APP.UI.mostrarTractoras(tractoras);
-        }, 'data/tractoras.json');
-console.log("fin Controller");
+            var respuesta = JSON.parse(jqXHR.responseText);
+            APP.UI.mostrarTractoras(respuesta);
+        });
     };
 
     var showRemolques = function(e){
         APP.UI.mostrarActivo(this);
-        console.log("remolques de antes de getRemolques");
-        APP.Pedir.getRemolques(function(remolques, textStatus, jqXHR){
-            console.log("remolques de getTractoras");
-            console.log(remolques);
+        APP.Pedir.getRemolquesPHP(function(remolques, textStatus, jqXHR){
+            var respuesta = JSON.parse(jqXHR.responseText);
             APP.UI.mostrarRemolques(remolques);
-        }, 'data/remolques.json');
+        });
 
     };
 
     var showTalleres = function(e){
         APP.UI.mostrarActivo(this);
-        console.log("talleres de antes de getTalleres");
-        APP.Pedir.getTalleres(function(talleres, textStatus, jqXHR){
-            console.log("talleres de getTalleres");
-            console.log(talleres);
+        APP.Pedir.getTalleresPHP(function(talleres, textStatus, jqXHR){
             APP.UI.mostrarTalleres(talleres);
-        }, 'data/talleres.json');
+        });
     };
 
     var showAseguradoras = function(e){
         APP.UI.mostrarActivo(this);
-        console.log("asegs de antes de getTalleres");
-        APP.Pedir.getTalleres(function(talleres, textStatus, jqXHR){
-            console.log("asegs de getTalleres");
-            console.log(talleres);
-            APP.UI.mostrarTalleres(talleres);
-        }, 'data/talleres.json');
+        APP.Pedir.getAseguradorasPHP(function(aseguradoras, textStatus, jqXHR){
+            APP.UI.mostrarAseguradoras(aseguradoras);
+        });
     };
 
     var showRemolque = function(e){
@@ -60,10 +42,11 @@ console.log("fin Controller");
 
     var showTractoraFicha = function(e){
         console.log("showTractoraFicha");
+        console.log(e);
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
             APP.UI.mostrarTractoraFicha(tractora);
-        }, 'data/tractora.json');
+        }, e.toElement.dataset.id);
     };
 
     var showRemolqueFicha = function(e){

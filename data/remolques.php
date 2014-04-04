@@ -1,6 +1,5 @@
 <?php
 
-  ////////////////////////////////////////////
   //BBDD
 
   $servidor = "localhost";
@@ -11,7 +10,7 @@
   $conexion = mysql_connect($servidor,$usuario,$contrasena) or trigger_error(mysql_error(),E_USER_ERROR);
   $bd = mysql_select_db($bbdd,$conexion);
 
-  $sql = "SELECT * FROM Talleres";
+  $sql = "SELECT * FROM Remolques";
   $resultado = mysql_query($sql,$conexion) or die(mysql_error()."<br>".$sql."<hr>");
 
   $rows = array();

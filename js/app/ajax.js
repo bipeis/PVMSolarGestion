@@ -16,19 +16,9 @@ APP.Pedir = (function(){
         console.log(errorThrown);
     };
 
-    var getTractoras = function(devolverTractoras, tractorasLista){
+    var getTractorasPHP = function(devolverTractoras){
         $.ajax({
-                url : tractorasLista,
-                cache : false,
-                dataType : 'json',
-                success : devolverTractoras,
-                error : errorAjax
-        });
-    };
-
-    var getTractorasPHP = function(devolverTractoras, tractorasLista){
-        $.ajax({
-                url : 'data/talleres.php',
+                url : 'data/tractoras.php',
                 cache : false,
                 contentType: "application/json",
                 success : devolverTractoras,
@@ -36,9 +26,9 @@ APP.Pedir = (function(){
         });
     };
 
-    var getRemolques = function(devolverRemolques, remolquesLista){
+    var getRemolquesPHP = function(devolverRemolques){
         $.ajax({
-                url : remolquesLista,
+                url : 'data/remolques.php',
                 cache : false,
                 dataType : 'json',
                 success : devolverRemolques,
@@ -46,9 +36,9 @@ APP.Pedir = (function(){
         });
     };
 
-    var getTalleres = function(devolverTalleres, talleresLista){
+    var getTalleresPHP = function(devolverTalleres){
         $.ajax({
-                url : talleresLista,
+                url : 'data/talleres.php',
                 cache : false,
                 dataType : 'json',
                 success : devolverTalleres,
@@ -56,11 +46,24 @@ APP.Pedir = (function(){
         });
     };
 
-    var getTractora = function(devolverTractoraDatos, tractoraDatos){
+    var getAseguradorasPHP = function(devolverAseguradoras){
         $.ajax({
-                url : tractoraDatos,
+                url : 'data/aseguradoras.php',
                 cache : false,
                 dataType : 'json',
+                success : devolverAseguradoras,
+                error : errorAjax
+        });
+    };
+
+    var getTractora = function(devolverTractoraDatos, tractoraId){
+        console.log("ID" + tractoraId);
+        $.ajax({
+                url : 'data/tractora.php',
+                cache : false,
+                dataType : 'json',
+                type : 'POST',
+                data : { id : tractoraId },
                 success : devolverTractoraDatos,
                 error : errorAjax
         });
@@ -91,11 +94,11 @@ APP.Pedir = (function(){
         getInfo : getInfo,
         getTractora : getTractora,
         getRemolque : getRemolque,
-        getRemolques : getRemolques,
-        getTractoras : getTractoras,
+        getRemolquesPHP : getRemolquesPHP,
         getTractorasPHP : getTractorasPHP,
-        getTalleres : getTalleres,
-        getTaller : getTaller
+        getTalleresPHP : getTalleresPHP,
+        getTaller : getTaller,
+        getAseguradorasPHP : getAseguradorasPHP
     };
 
 })();
