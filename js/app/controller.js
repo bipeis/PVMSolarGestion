@@ -105,18 +105,17 @@ APP.Controller = (function() {
         console.log(e.toElement.dataset.id);
         //APP.UI.mostrarActivo(this);
 
-        var aux = e.toElement.dataset;
-        if (aux =="0") {
+        var aux = e.toElement.dataset.id;
+        console.log(aux);
+        if (aux == 0) {
         console.log("case 0");
-         showTractoraFichaDatosGenerales();
+         showTractoraFichaDatosGenerales(e);
         }
-        if (e.toElement.dataset.id =="1") {
-          console.log("case 1");
-          showTractoraFichaFinanciacion();
+        if (aux=='1') {
+        console.log("case 1");
+         showTractoraFichaFinanciacion(e);
         }
-        if (e.toElement.dataset.id =="3") {
-         showTractoraFichaDatosGenerales();
-        }
+
         console.log("no if");
 
     };

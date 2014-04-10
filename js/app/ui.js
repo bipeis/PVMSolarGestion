@@ -195,9 +195,9 @@ APP.UI = (function(lng, undefined) {
             stringForm+="<label class='label label-default' for='matricula'>Matrícula:</label>";
             stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora[0].Matricula + " > " ;
             stringForm+="<label class='label label-default' for='entidad'>Entidad:</label>";
-            stringForm+= "<input id='entidad' type='text' class='form-control' placeholder='entidad' value=" + tractora[0].Entidad + " > " ;
+            stringForm+= "<input id='entidad' type='text' class='form-control' placeholder='entidad' value=" + tractora[0].FinanciacionEntidad + " > " ;
             stringForm+="<label class='label label-default' for='contrato'>Contrato:</label>";
-            stringForm+= "<input id='contrato' type='text' class='form-control' placeholder='contrato' value=" + tractora[0].Contrato + " > " ;
+            stringForm+= "<input id='contrato' type='text' class='form-control' placeholder='contrato' value=" + tractora[0].FinanciacionContrato + " > " ;
             stringForm+="<label class='label label-default' for='fechainicio'>Fecha Inicio Contrato:</label>";
             stringForm+= "<input id='fechainicio' type='text' class='form-control' placeholder='fechainicio' value=" + tractora[0].FinanciacionFechaInicio + " > " ;
             stringForm+="<label class='label label-default' for='fechafin'>Fecha Fin:</label>";
@@ -362,6 +362,7 @@ APP.UI = (function(lng, undefined) {
         mostrarRemolque : mostrarRemolque,
         mostrarActivo : mostrarActivo,
         mostrarTractoraFichaDatosGenerales : mostrarTractoraFichaDatosGenerales,
+        mostrarTractoraFichaFinanciacion : mostrarTractoraFichaFinanciacion,
         mostrarRemolqueFicha : mostrarRemolqueFicha,
         mostrarTallerFicha : mostrarTallerFicha,
         mostrarAseguradoraFicha : mostrarAseguradoraFicha,
