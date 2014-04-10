@@ -103,22 +103,22 @@ APP.Controller = (function() {
         console.log("showCambioPestana");
         console.log(e);
         console.log(e.toElement.dataset.id);
-        APP.UI.mostrarActivo(this);
+        //APP.UI.mostrarActivo(this);
 
-
-        switch(e.toElement.dataset.id)
-        {
-        case 0:
+        var aux = e.toElement.dataset;
+        if (aux =="0") {
+        console.log("case 0");
          showTractoraFichaDatosGenerales();
-          break;case 1:
-          showTractoraFichaFinanciacion();
-          break;
-        case 2:
-         showTractoraFichaDatosGenerales();
-          break;
-        default:
-          //code to be executed if n is different from case 1 and 2
         }
+        if (e.toElement.dataset.id =="1") {
+          console.log("case 1");
+          showTractoraFichaFinanciacion();
+        }
+        if (e.toElement.dataset.id =="3") {
+         showTractoraFichaDatosGenerales();
+        }
+        console.log("no if");
+
     };
 
     return {

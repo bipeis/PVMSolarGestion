@@ -194,18 +194,18 @@ APP.UI = (function(lng, undefined) {
             stringForm+= "<input id='idTractora' type='text' class='form-control' placeholder='idTractora' value=" + tractora[0].IdTractora + " > " ;
             stringForm+="<label class='label label-default' for='matricula'>Matrícula:</label>";
             stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora[0].Matricula + " > " ;
-            stringForm+="<label class='label label-default' for='marca'>Marca:</label>";
-            stringForm+= "<input id='marca' type='text' class='form-control' placeholder='marca' value=" + tractora[0].Marca + " > " ;
-            stringForm+="<label class='label label-default' for='modelo'>Modelo:</label>";
-            stringForm+= "<input id='modelo' type='text' class='form-control' placeholder='modelo' value=" + tractora[0].Modelo + " > " ;
-            stringForm+="<label class='label label-default' for='cateur'>Cat. Eur:</label>";
-            stringForm+= "<input id='cateur' type='text' class='form-control' placeholder='cateur' value=" + tractora[0].CatEur + " > " ;
-            stringForm+="<label class='label label-default' for='valorcompra'>Valor de compra:</label>";
-            stringForm+= "<input id='valorcompra' type='text' class='form-control' placeholder='valorcompra' value=" + tractora[0].ValorCompra + " > " ;
-            stringForm+="<label class='label label-default' for='itv1'>ITV - fecha 1ª revisión:</label>";
-            stringForm+= "<input id='itv1' type='text' class='form-control' placeholder='itv1' value=" + tractora[0].itv1 + " > " ;
-            stringForm+="<label class='label label-default' for='itv2'>ITV - fecha 2ª revisión:</label>";
-            stringForm+= "<input id='itv2' type='text' class='form-control' placeholder='itv2' value=" + tractora[0].itv2 + " > " ;
+            stringForm+="<label class='label label-default' for='entidad'>Entidad:</label>";
+            stringForm+= "<input id='entidad' type='text' class='form-control' placeholder='entidad' value=" + tractora[0].Entidad + " > " ;
+            stringForm+="<label class='label label-default' for='contrato'>Contrato:</label>";
+            stringForm+= "<input id='contrato' type='text' class='form-control' placeholder='contrato' value=" + tractora[0].Contrato + " > " ;
+            stringForm+="<label class='label label-default' for='fechainicio'>Fecha Inicio Contrato:</label>";
+            stringForm+= "<input id='fechainicio' type='text' class='form-control' placeholder='fechainicio' value=" + tractora[0].FinanciacionFechaInicio + " > " ;
+            stringForm+="<label class='label label-default' for='fechafin'>Fecha Fin:</label>";
+            stringForm+= "<input id='fechafin' type='text' class='form-control' placeholder='fechafin' value=" + tractora[0].FinanciacionFechaFin + " > " ;
+            stringForm+="<label class='label label-default' for='cuotamensual'>Cuota mensual:</label>";
+            stringForm+= "<input id='cuotamensual' type='text' class='form-control' placeholder='cuotamensual' value=" + tractora[0].FinanciacionCuotaMensual + " > " ;
+            stringForm+="<label class='label label-default' for='cuotaresidual'>Cuota residual:</label>";
+            stringForm+= "<input id='cuotaresidual' type='text' class='form-control' placeholder='cuotaresidual' value=" + tractora[0].FinanciacionCutotaResidual + " > " ;
 
 
             stringForm+="<button type='submit' class='btn btn-default'>Editar</button>";
