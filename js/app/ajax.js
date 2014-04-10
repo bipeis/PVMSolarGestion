@@ -69,26 +69,57 @@ APP.Pedir = (function(){
         });
     };
 
-    var getRemolque = function(devolverRemolqueDatos, remolqueDatos){
+    var getRemolque = function(devolverRemolqueDatos, remolqueId){
+        console.log("ID" + remolqueId);
         $.ajax({
-                url : remolqueDatos,
+                url : 'data/remolque.php',
                 cache : false,
                 dataType : 'json',
+                type : 'POST',
+                data : { id : remolqueId },
                 success : devolverRemolqueDatos,
                 error : errorAjax
         });
     };
 
-    var getTaller = function(devolverTallerDatos, tallerDatos){
+    var getTaller = function(devolverTallerDatos, tallerId){
         $.ajax({
-                url : tallerDatos,
+                url : 'data/taller.php',
                 cache : false,
                 dataType : 'json',
+                type : 'POST',
+                data : { id : tallerId },
                 success : devolverTallerDatos,
                 error : errorAjax
         });
     };
 
+    var getAseguradora = function(devolverAseguradoraDatos, aseguradoraId){
+        $.ajax({
+                url : 'data/aseguradora.php',
+                cache : false,
+                dataType : 'json',
+                type : 'POST',
+                data : { id : aseguradoraId },
+                success : devolverAseguradoraDatos,
+                error : errorAjax
+        });
+    };
+
+
+    var getMantenimientosTractora = function(devolverMantenimientos,mantenimientoId){
+        console.log("mantenimientoId");
+        console.log(mantenimientoId);
+        $.ajax({
+                url : 'data/mantenimientos.php',
+                cache : false,
+                dataType : 'json',
+                type : 'POST',
+                data : { id: mantenimientoId },
+                success : devolverMantenimientos,
+                error : errorAjax
+        });
+    };
 
     return{
         getInfo : getInfo,
@@ -98,7 +129,9 @@ APP.Pedir = (function(){
         getTractorasPHP : getTractorasPHP,
         getTalleresPHP : getTalleresPHP,
         getTaller : getTaller,
-        getAseguradorasPHP : getAseguradorasPHP
+        getAseguradora : getAseguradora,
+        getAseguradorasPHP : getAseguradorasPHP,
+        getMantenimientosTractora : getMantenimientosTractora
     };
 
 })();
