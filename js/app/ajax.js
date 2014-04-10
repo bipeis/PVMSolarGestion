@@ -17,6 +17,8 @@ APP.Pedir = (function(){
     };
 
     var getTractorasPHP = function(devolverTractoras){
+                console.log("showTractoras");
+
         $.ajax({
                 url : 'data/tractoras.php',
                 cache : false,

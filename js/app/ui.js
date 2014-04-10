@@ -22,6 +22,8 @@ APP.UI = (function(lng, undefined) {
         $divBusqueda.remove();
         var $divTabla = $('#divTabla');
         $divTabla.remove();
+        var $menutractora = $('#menutractora');
+        $menutractora.remove();
 
     };
 

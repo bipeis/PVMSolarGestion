@@ -3,8 +3,10 @@ APP.Controller = (function() {
     "use strict";
 
     var showTractoras = function(e){
+        console.log("showTractoras");
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTractorasPHP(function(tractoras, textStatus, jqXHR){
+            console.log(tractoras);
             var respuesta = JSON.parse(jqXHR.responseText);
             APP.UI.mostrarTractoras(respuesta);
         });
