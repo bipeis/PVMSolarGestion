@@ -15,8 +15,9 @@ APP.Controller = (function() {
     var showRemolques = function(e){
         APP.UI.mostrarActivo(this);
         APP.Pedir.getRemolquesPHP(function(remolques, textStatus, jqXHR){
+            console.log(remolques);
             var respuesta = JSON.parse(jqXHR.responseText);
-            APP.UI.mostrarRemolques(remolques);
+            APP.UI.mostrarRemolques(respuesta);
         });
 
     };
@@ -24,14 +25,16 @@ APP.Controller = (function() {
     var showTalleres = function(e){
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTalleresPHP(function(talleres, textStatus, jqXHR){
-            APP.UI.mostrarTalleres(talleres);
+            var respuesta = JSON.parse(jqXHR.responseText);
+            APP.UI.mostrarTalleres(respuesta);
         });
     };
 
     var showAseguradoras = function(e){
         APP.UI.mostrarActivo(this);
         APP.Pedir.getAseguradorasPHP(function(aseguradoras, textStatus, jqXHR){
-            APP.UI.mostrarAseguradoras(aseguradoras);
+            var respuesta = JSON.parse(jqXHR.responseText);
+            APP.UI.mostrarAseguradoras(respuesta);
         });
     };
 
@@ -42,7 +45,7 @@ APP.Controller = (function() {
         }, 'data/remolque.json');
     };
 
-    var showTractoraFichaDatosGenerales = function(e){
+    var showTractoraFicha = function(e){
         console.log("showTractoraFicha");
         console.log(e);
         APP.UI.mostrarActivo(this);
@@ -51,13 +54,31 @@ APP.Controller = (function() {
         }, e.toElement.dataset.id);
     };
 
-    var showTractoraFichaFinanciacion = function(e){
+    var showTractoraFichaDatosGenerales = function(e){
         console.log("showTractoraFicha");
         console.log(e);
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
+            APP.UI.mostrarTractoraFichaDatosGenerales(tractora);
+        }, e.toElement.dataset.tractora);
+    };
+
+    var showTractoraFichaFinanciacion = function(e){
+        console.log("showTractoraFichaFinanciacion");
+        console.log(e);
+        APP.UI.mostrarActivo(this);
+        APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
             APP.UI.mostrarTractoraFichaFinanciacion(tractora);
-        }, e.toElement.dataset.id);
+        }, e.toElement.dataset.tractora);
+    };
+
+    var showTractoraFichaMantenimientos = function(e){
+        console.log("showTractoraFichaMantenimientos");
+        console.log(e);
+        APP.UI.mostrarActivo(this);
+        APP.Pedir.getMantenimientosTractora(function(tractora, textStatus, jqXHR){
+            APP.UI.mostrarMantenimientosTractora(tractora);
+        }, e.toElement.dataset.tractora);
     };
 
     var showRemolqueFicha = function(e){
@@ -115,6 +136,10 @@ APP.Controller = (function() {
         console.log("case 1");
          showTractoraFichaFinanciacion(e);
         }
+        if (aux=='2') {
+        console.log("case 2");
+         showTractoraFichaMantenimientos(e);
+        }
 
         console.log("no if");
 
@@ -123,8 +148,10 @@ APP.Controller = (function() {
     return {
         showTractoras : showTractoras,
         showRemolque : showRemolque,
+        showTractoraFicha : showTractoraFicha,
         showTractoraFichaDatosGenerales : showTractoraFichaDatosGenerales,
         showTractoraFichaFinanciacion : showTractoraFichaFinanciacion,
+        showTractoraFichaMantenimientos : showTractoraFichaMantenimientos,
         showRemolqueFicha : showRemolqueFicha,
         showTallerFicha :showTallerFicha,
         showAseguradoraFicha : showAseguradoraFicha,

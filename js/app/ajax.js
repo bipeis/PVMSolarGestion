@@ -17,7 +17,7 @@ APP.Pedir = (function(){
     };
 
     var getTractorasPHP = function(devolverTractoras){
-                console.log("showTractoras");
+        console.log("showTractoras");
 
         $.ajax({
                 url : 'data/tractoras.php',
@@ -29,10 +29,12 @@ APP.Pedir = (function(){
     };
 
     var getRemolquesPHP = function(devolverRemolques){
+        console.log("getRemolquesPHP");
+
         $.ajax({
                 url : 'data/remolques.php',
                 cache : false,
-                dataType : 'json',
+                contentType: "application/json",
                 success : devolverRemolques,
                 error : errorAjax
         });
@@ -42,7 +44,7 @@ APP.Pedir = (function(){
         $.ajax({
                 url : 'data/talleres.php',
                 cache : false,
-                dataType : 'json',
+                contentType: "application/json",
                 success : devolverTalleres,
                 error : errorAjax
         });
@@ -52,7 +54,7 @@ APP.Pedir = (function(){
         $.ajax({
                 url : 'data/aseguradoras.php',
                 cache : false,
-                dataType : 'json',
+                contentType: "application/json",
                 success : devolverAseguradoras,
                 error : errorAjax
         });
@@ -109,15 +111,15 @@ APP.Pedir = (function(){
     };
 
 
-    var getMantenimientosTractora = function(devolverMantenimientos,mantenimientoId){
-        console.log("mantenimientoId");
-        console.log(mantenimientoId);
+    var getMantenimientosTractora = function(devolverMantenimientos,tractoraId){
+        console.log("getMantenimientosTractora");
+        console.log(tractoraId);
         $.ajax({
                 url : 'data/mantenimientos.php',
                 cache : false,
                 dataType : 'json',
                 type : 'POST',
-                data : { id: mantenimientoId },
+                data : { id: tractoraId },
                 success : devolverMantenimientos,
                 error : errorAjax
         });

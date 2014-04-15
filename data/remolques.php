@@ -1,22 +1,6 @@
 <?php
 
-   //BBDD
-/*
-  $servidor = "localhost";
-  $usuario = "root";
-  $contrasena = "daw";
-  $bbdd = "bdpvm";
-*/
-/*
-  $servidor = "localhost";
-  $usuario = "pvmuser";
-  $contrasena = "pvmuser";
-  $bbdd = "pvnbd";
-*/
-  $servidor = "localhost";
-  $usuario = "tutextil_pvm";
-  $contrasena = "bil3600p";
-  $bbdd = "tutextil_pvm";
+include("config.php");
 
 
   $conexion = mysql_connect($servidor,$usuario,$contrasena) or trigger_error(mysql_error(),E_USER_ERROR);
