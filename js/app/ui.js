@@ -1,6 +1,6 @@
 var APP = APP||{};
 APP.UI = (function(lng, undefined) {
-    "use strict";
+    'use strict';
 
     var borrarPantalla = function(){
         var $divListado = $('#listado');
@@ -19,15 +19,15 @@ APP.UI = (function(lng, undefined) {
     };
 
     var mostrarTractoras = function(tractoras){
-        console.log("Pintar tractoras");
+        console.log('Pintar tractoras');
         borrarPantalla();
 
         //Formulario de búsqueda de una tractora del listado
-        var formBuscarTractora = $("<section id='formBusqueda'>" +
-          "<form id='formBuscarTractora' class='navbar-form navbar-left' role='search'>" +
-          "<article class='form-group'>  <input type='text' class='form-control' placeholder='Matricula'> </article>" +
-           " <button type='submit' class='btn btn-default'>Buscar</button></form></section>");
-        formBuscarTractora.insertAfter("#listaDatos");
+        var formBuscarTractora = $('<section id=formBusqueda>' +
+          '<form id=formBuscarTractora class=navbar-form navbar-left role=search>' +
+          '<article class=form-group>  <input type=text class=form-control placeholder=Matricula> </article>' +
+           ' <button type=submit class=btn btn-default>Buscar</button></form></section>');
+        formBuscarTractora.insertAfter('#listaDatos');
 
          //Listado de tractoras
          var stringTabla = "<section id='divTabla'><h1>Tractoras</h1>" +
@@ -339,16 +339,16 @@ APP.UI = (function(lng, undefined) {
     };
 
 
-    var mostrarMantenimientosTractora = function(tractora){
+    var mostrarMantenimientosTractora = function(mantenimientos){
         console.log("Pintar mantenimientos");
-        console.log(tractora);
+        console.log(mantenimientos);
         borrarPantalla();
 
         //submenu tractora
         var stringMenu ="<section><ul id='menutractora' class='nav nav-tabs'>" +
-        " <li> <a data-id='0' data-tractora='" + tractora[0].IdTractora + "' href='#''>Datos Generales</a></li>" +
-        " <li><a data-id='1' data-tractora='" + tractora[0].IdTractora + "' href='#'>Financiación</a></li>" +
-        " <li  class='active'><a data-id='2' data-tractora='" + tractora[0].IdTractora + "' href='#'>Mantenimientos</a></li></ul></section>";
+        " <li> <a data-id='0' data-tractora='" + mantenimientos[0].IdTractora + "' href='#''>Datos Generales</a></li>" +
+        " <li><a data-id='1' data-tractora='" + mantenimientos[0].IdTractora + "' href='#'>Financiación</a></li>" +
+        " <li  class='active'><a data-id='2' data-tractora='" + mantenimientos[0].IdTractora + "' href='#'>Mantenimientos</a></li></ul></section>";
         var divMenu = $(stringMenu);
         divMenu.insertAfter($("#listaDatos"));
 
@@ -368,7 +368,7 @@ APP.UI = (function(lng, undefined) {
          for (var j = 0; j<=mantenimientos.length - 1; j++) {
              stringTabla+= "<tr> <td>"+ mantenimientos[j].IdMantenimiento +
               "</td> <td>" + mantenimientos[j].Fecha + "</td>" +
-              "<td></td>" +
+              "<td>" + mantenimientos[j].IdTractora + "</td>" +
               " <td> <button data-id=" + mantenimientos[j].IdMantenimiento + "class='btn btn-mini'>Ficha</button>" +
               "  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
          }

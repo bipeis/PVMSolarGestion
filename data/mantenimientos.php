@@ -8,7 +8,7 @@ include("config.php");
   $conexion = mysql_connect($servidor,$usuario,$contrasena) or trigger_error(mysql_error(),E_USER_ERROR);
   $bd = mysql_select_db($bbdd,$conexion);
 
-  $sql = "SELECT * FROM tractoraMantenimientos WHERE IdTractora=$id";
+  $sql = "SELECT * FROM TractoraMantenimientos WHERE IdTractora=$id";
   $resultado = mysql_query($sql,$conexion) or die(mysql_error()."<br>".$sql."<hr>");
 
   $rows = array();
