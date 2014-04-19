@@ -51,7 +51,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
             APP.UI.mostrarTractoraFichaDatosGenerales(tractora);
-        }, e.toElement.dataset.id);
+        }, e.target.dataset.id);
     };
 
     var showTractoraFichaDatosGenerales = function(e){
@@ -60,7 +60,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
             APP.UI.mostrarTractoraFichaDatosGenerales(tractora);
-        }, e.toElement.dataset.tractora);
+        }, e.target.dataset.tractora);
     };
 
     var showTractoraFichaFinanciacion = function(e){
@@ -69,7 +69,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
             APP.UI.mostrarTractoraFichaFinanciacion(tractora);
-        }, e.toElement.dataset.tractora);
+        }, e.target.dataset.tractora);
     };
 
     var showTractoraFichaMantenimientos = function(e){
@@ -78,7 +78,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getMantenimientosTractora(function(tractora, textStatus, jqXHR){
             APP.UI.mostrarMantenimientosTractora(tractora);
-        }, e.toElement.dataset.tractora);
+        }, e.target.dataset.tractora);
     };
 
     var showRemolqueFicha = function(e){
@@ -86,7 +86,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getRemolque(function(remolque, textStatus, jqXHR){
             APP.UI.mostrarRemolqueFicha(remolque);
-        }, e.toElement.dataset.id);
+        }, e.target.dataset.id);
     };
 
     var showTallerFicha = function(e){
@@ -94,7 +94,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getTaller(function(taller, textStatus, jqXHR){
             APP.UI.mostrarTallerFicha(taller);
-        }, e.toElement.dataset.id);
+        }, e.target.dataset.id);
     };
 
     var showAseguradoraFicha = function(e){
@@ -102,7 +102,7 @@ APP.Controller = (function() {
         APP.UI.mostrarActivo(this);
         APP.Pedir.getAseguradora(function(aseguradora, textStatus, jqXHR){
             APP.UI.mostrarAseguradoraFicha(aseguradora);
-        }, e.toElement.dataset.id);
+        }, e.target.dataset.id);
     };
 
     var showModificarDatosTractora = function(e){
@@ -113,11 +113,29 @@ APP.Controller = (function() {
 
     var showMantenimientosTractora = function(e){
         console.log('showMantenimientosTractora');
-        console.log(e.toElement.dataset.id);
+        console.log(e.target.dataset.id);
         APP.UI.mostrarActivo(this);
         APP.Pedir.getMantenimientosTractora(function(mantenimientos, textStatus, jqXHR){
             APP.UI.mostrarMantenimientosTractora(mantenimientos);
-        }, e.toElement.dataset.id);
+        }, e.target.dataset.id);
+    };
+
+    var login = function(e){
+        console.log('login');
+        console.log(e.target);
+        APP.UI.mostrarActivo(this);
+        var usuario = document.getElementById("usuarioInput").value;
+        console.log(usuario);
+
+        console.log("guardar");
+
+        sessionStorage.setItem('usuario', usuario);
+        //localStorage.setItem('usuario', document.getElementById("cajatextoLocal").value);
+
+        console.log(sessionStorage.getItem('usuario'));
+        console.log(localStorage.getItem('usuario'));
+
+
     };
 
     var showCambioPestana = function(e){
@@ -158,6 +176,7 @@ APP.Controller = (function() {
         showAseguradoras : showAseguradoras,
         showModificarDatosTractora : showModificarDatosTractora,
         showMantenimientosTractora : showMantenimientosTractora,
-        showCambioPestana : showCambioPestana
+        showCambioPestana : showCambioPestana,
+        login : login
     };
 })();

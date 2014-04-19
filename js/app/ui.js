@@ -25,12 +25,12 @@ APP.UI = (function(lng, undefined) {
         //Formulario de búsqueda de una tractora del listado
         var formBuscarTractora = $('<section id=formBusqueda>' +
           '<form id=formBuscarTractora class=navbar-form navbar-left role=search>' +
-          '<article class=form-group>  <input type=text class=form-control placeholder=Matricula> </article>' +
+          '<article class=form-group>  <input type=search class=form-control placeholder=Matricula> </article>' +
            ' <button type=submit class=btn btn-default>Buscar</button></form></section>');
         formBuscarTractora.insertAfter('#listaDatos');
 
          //Listado de tractoras
-         var stringTabla = "<section id='divTabla'><h1>Tractoras</h1>" +
+         var stringTabla = "<section id='divTabla' class='centrado'><h1>Tractoras</h1>" +
          "<table id='listadoTractoras' class='table table-striped'>" +
             "<thead> <tr> <th>ID</th> <th>Matricula</th> <th>Marca</th> <th>Acciones</th> </tr> </thead>" +
             "<tbody>";
@@ -97,8 +97,8 @@ APP.UI = (function(lng, undefined) {
          for (var j = 0; j<=talleres.length - 1; j++) {
              stringTabla+= "<tr> <td>"+ talleres[j].IdTaller +
               "</td> <td>" + talleres[j].Nombre + "</td>"+
-              " <td></td>" +
-              " <td> <button data-id=" + talleres[j].IdTaller + "class='btn btn-mini'>Ficha</button>" +
+              " <td>" + talleres[j].Direccion + "</td>" +
+              " <td> <button data-id=" + talleres[j].IdTaller + " class='btn btn-mini'>Ficha</button>" +
               "  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
          }
          stringTabla+="</tbody> </table></section>";
@@ -141,7 +141,7 @@ APP.UI = (function(lng, undefined) {
         borrarPantalla();
 
         //submenu tractora datos generales
-        var stringMenu ="<section><ul id='menutractora' class='nav nav-tabs'>" +
+        var stringMenu ="<section class='centrado'><ul id='menutractora' class='nav nav-tabs'>" +
         " <li  class='active'> <a data-id='0' data-tractora='" + tractora[0].IdTractora + "' href='#''>Datos Generales</a></li>" +
         " <li> <a data-id='1' data-tractora='" + tractora[0].IdTractora + "' href='#'>Financiación</a></li>" +
         " <li> <a data-id='2' data-tractora='" + tractora[0].IdTractora + "' href='#'>Mantenimientos</a></li>" +
@@ -151,15 +151,16 @@ APP.UI = (function(lng, undefined) {
 
          //Ficha de tractora datos generales
          var stringForm = "<section id='divGeneral'>" +
-                              "<form id='formFichaTractora' class='form'>"+
+                              "<form id='formFichaTractora' class='form' action=''>"+
                                 "<article class='form-group'>   ";
 
             stringForm+="<label class='label label-default' for='idTractora'>IdTractora:</label>";
-            stringForm+= "<input id='idTractora' type='text' class='form-control' placeholder='idTractora' value=" + tractora[0].IdTractora + " > " ;
+            stringForm+= "<input id='idTractora' type='number' class='form-control' placeholder='idTractora' required value=" + tractora[0].IdTractora + " > " ;
             stringForm+="<label class='label label-default' for='matricula'>Matrícula:</label>";
-            stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora[0].Matricula + " > " ;
+            stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' required value=" + tractora[0].Matricula + " > " ;
             stringForm+="<label class='label label-default' for='marca'>Marca:</label>";
-            stringForm+= "<input id='marca' type='text' class='form-control' placeholder='marca' value=" + tractora[0].Marca + " > " ;
+            stringForm+= "<input id='marca' type='text' class='form-control' placeholder='marca' list='listamarcas' value=" + tractora[0].Marca + " > " ;
+            stringForm+= "<datalist id='listamarcas'><option label='Seat' value='Seat'><option label='Scania' value='Scania'><option label='Mercedes' value='Mercedes'></datalist>";
             stringForm+="<label class='label label-default' for='modelo'>Modelo:</label>";
             stringForm+= "<input id='modelo' type='text' class='form-control' placeholder='modelo' value=" + tractora[0].Modelo + " > " ;
             stringForm+="<label class='label label-default' for='cateur'>Cat. Eur:</label>";
@@ -167,13 +168,13 @@ APP.UI = (function(lng, undefined) {
             stringForm+="<label class='label label-default' for='valorcompra'>Valor de compra:</label>";
             stringForm+= "<input id='valorcompra' type='text' class='form-control' placeholder='valorcompra' value=" + tractora[0].ValorCompra + " > " ;
             stringForm+="<label class='label label-default' for='itv1'>ITV - fecha 1ª revisión:</label>";
-            stringForm+= "<input id='itv1' type='text' class='form-control' placeholder='itv1' value=" + tractora[0].itv1 + " > " ;
+            stringForm+= "<input id='itv1' type='date' class='form-control' placeholder='itv1' value=" + tractora[0].itv1 + " > " ;
             stringForm+="<label class='label label-default' for='itv2'>ITV - fecha 2ª revisión:</label>";
-            stringForm+= "<input id='itv2' type='text' class='form-control' placeholder='itv2' value=" + tractora[0].itv2 + " > " ;
+            stringForm+= "<input id='itv2' type='date' class='form-control' placeholder='itv2' value=" + tractora[0].itv2 + " > " ;
 
             stringForm+="</article>";
 
-            stringForm+="<button type='submit' class='btn btn-default'>Editar</button>";
+            stringForm+="<input type='submit' value='Enviar' class='btn btn-default'>";
             stringForm+="<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>";
             stringForm+="<button id='mantenimientosTractoraBtn' data-id=" + tractora[0].IdTractora + " " +
             "class='btn btn-default'>Mantenimientos</button></form></section>";
@@ -209,9 +210,9 @@ APP.UI = (function(lng, undefined) {
             stringForm+="<label class='label label-default' for='contrato'>Contrato:</label>";
             stringForm+= "<input id='contrato' type='text' class='form-control' placeholder='contrato' value=" + tractora[0].FinanciacionContrato + " > " ;
             stringForm+="<label class='label label-default' for='fechainicio'>Fecha Inicio Contrato:</label>";
-            stringForm+= "<input id='fechainicio' type='text' class='form-control' placeholder='fechainicio' value=" + tractora[0].FinanciacionFechaInicio + " > " ;
+            stringForm+= "<input id='fechainicio' type='date' class='form-control' placeholder='fechainicio' value=" + tractora[0].FinanciacionFechaInicio + " > " ;
             stringForm+="<label class='label label-default' for='fechafin'>Fecha Fin:</label>";
-            stringForm+= "<input id='fechafin' type='text' class='form-control' placeholder='fechafin' value=" + tractora[0].FinanciacionFechaFin + " > " ;
+            stringForm+= "<input id='fechafin' type='date' class='form-control' placeholder='fechafin' value=" + tractora[0].FinanciacionFechaFin + " > " ;
             stringForm+="<label class='label label-default' for='cuotamensual'>Cuota mensual:</label>";
             stringForm+= "<input id='cuotamensual' type='text' class='form-control' placeholder='cuotamensual' value=" + tractora[0].FinanciacionCuotaMensual + " > " ;
             stringForm+="<label class='label label-default' for='cuotaresidual'>Cuota residual:</label>";
@@ -267,15 +268,26 @@ APP.UI = (function(lng, undefined) {
             stringForm+="<label class='label label-default' for='nombre'>Nombre:</label>";
             stringForm+= "<input id='nombre' type='text' class='form-control' placeholder='Nombre' value=" + taller[0].Nombre + " > " ;
             stringForm+="<label class='label label-default' for='direccion'>Direccion:</label>";
-            stringForm+= "<input id='direccion' type='text' class='form-control' placeholder='Direccion' value=" + taller[0].direccion + " > " ;
-            stringForm+="<label class='label label-default' for='telefono'>Telefono:<label>";
-            //stringForm+= "<input id='telefono' type='text' class='form-control' placeholder='telefono' value=" + taller.telefono + " > " ;
+            stringForm+= "<input id='direccion' type='text' class='form-control' placeholder='Direccion' value=" + taller[0].Direccion + " > " ;
+            stringForm+="<label class='label label-default' for='telefono'>Telefono:</label>";
+            stringForm+= "<input id='telefono' type='tel' class='form-control' placeholder='telefono' value=" + taller.telefono + " > " ;
 
             stringForm+="</article>";
 
             stringForm+="<button type='submit' class='btn btn-default'>Editar</button></form></section>";
         var divGeneral = $(stringForm);
         divGeneral.insertAfter($("#listaDatos"));
+
+        //mapa
+        var mapa = $(" <div id='map-canvas' style='width: 320px; height: 480px;'></div>" +
+                      "<div>" +
+                        "<input id='address' type='textbox' value='" + taller[0].Direccion + "'>" +
+                        "<input type='button' value='Encode' onclick='APP.Map.codeAddress()'>" +
+                        "</div>");
+        mapa.insertAfter("#divGeneral");
+
+        APP.Map.initialize();
+
     };
 
     var mostrarAseguradoraFicha = function(aseguradora){
@@ -294,7 +306,7 @@ APP.UI = (function(lng, undefined) {
             stringForm+="<label class='label label-default' for='direccion'>Direccion:</label>";
             stringForm+= "<input id='direccion' type='text' class='form-control' placeholder='Direccion' value=" + aseguradora[0].direccion + " > " ;
             stringForm+="<label class='label label-default' for='telefono'>Telefono:<label>";
-            //stringForm+= "<input id='telefono' type='text' class='form-control' placeholder='telefono' value=" + aseguradora.telefono + " > " ;
+            stringForm+= "<input id='telefono' type='tel' class='form-control' placeholder='telefono' value=" + aseguradora.telefono + " > " ;
 
             stringForm+="</article>";
 
