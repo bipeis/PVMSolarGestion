@@ -13,6 +13,7 @@
         $(document).on('click', '#mantenimientosTractoraBtn', APP.Controller.showMantenimientosTractora);
         $(document).on('click', '#menutractora li', APP.Controller.showCambioPestana);
         $(document).on('click', '#botonLogin', APP.Controller.login);
+        $(document).on('click', '#sessionLogOut', APP.Controller.unlogin);
 
 
     });

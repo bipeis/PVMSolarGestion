@@ -120,6 +120,19 @@ APP.Controller = (function() {
         }, e.target.dataset.id);
     };
 
+    var showLogin = function(usuario,e){
+        console.log('showLogin');
+        //APP.UI.mostrarActivo(this);
+        console.log(APP);
+        APP.UI.mostrarLogin();
+    };
+
+    var showMenuInicio = function(usuario,e){
+        console.log('showMenuInicio');
+        APP.UI.mostrarActivo(this);
+        APP.UI.mostrarMenuInicio(usuario);
+    };
+
     var login = function(e){
         console.log('login');
         console.log(e.target);
@@ -129,13 +142,40 @@ APP.Controller = (function() {
 
         console.log("guardar");
 
-        sessionStorage.setItem('usuario', usuario);
-        //localStorage.setItem('usuario', document.getElementById("cajatextoLocal").value);
+        console.log(document.getElementById('checkboxLogin'));
+
+        if(document.getElementById('checkboxLogin').checked){
+            console.log('checked');
+
+             localStorage.setItem('usuario', usuario);
+
+        }
+        else{
+            console.log('not checked');
+            sessionStorage.setItem('usuario', usuario);
+        }
+
 
         console.log(sessionStorage.getItem('usuario'));
         console.log(localStorage.getItem('usuario'));
 
+        showMenuInicio(usuario);
+    };
 
+    var unlogin = function(e){
+        console.log('unlogin');
+        console.log(e.target);
+        APP.UI.mostrarActivo(this);
+
+        var usuario = console.log(document.getElementById('usuarioNav'));
+
+        sessionStorage.removeItem('usuario');
+        localStorage.removeItem('usuario');
+
+        console.log(sessionStorage.getItem('usuario'));
+        console.log(localStorage.getItem('usuario'));
+
+        showLogin();
     };
 
     var showCambioPestana = function(e){
@@ -161,6 +201,18 @@ APP.Controller = (function() {
 
     };
 
+    var showNav = function(e){
+        console.log('showNav');
+        APP.UI.mostrarActivo(this);
+        APP.UI.mostrarNav(usuario);
+    };
+
+    var showEmptyNav = function(e){
+        console.log('showEmptyNav');
+        APP.UI.mostrarActivo(this);
+        APP.UI.mostrarEmptyNav(usuario);
+    };
+
     return {
         showTractoras : showTractoras,
         showRemolque : showRemolque,
@@ -177,6 +229,11 @@ APP.Controller = (function() {
         showModificarDatosTractora : showModificarDatosTractora,
         showMantenimientosTractora : showMantenimientosTractora,
         showCambioPestana : showCambioPestana,
-        login : login
+        login : login,
+        unlogin : unlogin,
+        showLogin : showLogin,
+        showMenuInicio : showMenuInicio,
+        showNav : showNav,
+        showEmptyNav : showEmptyNav
     };
 })();

@@ -2,7 +2,6 @@ var APP = APP||{};
 APP.UI = (function(lng, undefined) {
     'use strict';
 
-
     var borrarPantalla = function(){
         var $divListado = $('#listado');
         $divListado.remove();
@@ -17,11 +16,6 @@ APP.UI = (function(lng, undefined) {
         var $menutractora = $('#menutractora');
         $menutractora.remove();
         var $menutractora = $('#loginsection');
-        $menutractora.remove();
-        var $menutractora = $('#navbar');
-        $menutractora.remove();
-
-        var $menutractora = $('#menucentral');
         $menutractora.remove();
 
     };
@@ -115,7 +109,6 @@ APP.UI = (function(lng, undefined) {
 
     };
 
-
     var mostrarAseguradoras = function(aseguradoras){
         borrarPantalla();
 
@@ -142,7 +135,6 @@ APP.UI = (function(lng, undefined) {
         divTabla.insertAfter($("#formBusqueda"));
 
     };
-
 
     var mostrarTractoraFichaDatosGenerales = function(tractora){
         console.log("Pintar tractora");
@@ -238,77 +230,6 @@ APP.UI = (function(lng, undefined) {
         divGeneral.insertAfter($("#menutractora"));
     };
 
-
-    var mostrarTractoraFichaEditable = function(tractora){
-        console.log("Pintar tractora");
-        console.log(tractora);
-
-        borrarPantalla();
-
-         //Ficha de tractora
-         var stringForm = "<section id='divGeneral'>" +
-                            "<form id='formFichaTractora' class='form'>"+
-                            "<article class='form-group'>";
-
-            stringForm+="<label class='label label-default' for='idTractora'>IdTractora:</label>";
-            stringForm+= "<input id='idTractora' type='text' class='form-control' placeholder='idTractora' value=" + tractora[0].IdTractora + " > " ;
-            stringForm+="<label class='label label-default' for='matricula'>matricula:</label>";
-            stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora[0].Matricula + " > " ;
-            stringForm+="<label class='label label-default' for='seguro'>seguro:</label>";
-            stringForm+= "<input id='seguro' type='text' class='form-control' placeholder='seguro' value=" + tractora[0].seguro + " > " ;
-            stringForm+="<label class='label label-default' for='aseguradora'>aseguradora:</label>";
-            stringForm+= "<input id='aseguradora' type='text' class='form-control' placeholder='aseguradora' value=" + tractora[0].aseguradora + " > " ;
-
-            stringForm+="</article>";
-
-            stringForm+="<button type='submit' class='btn btn-default'>Editar</button>";
-            stringForm+="<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>";
-            stringForm+="<button id='mantenimientosTractoraBtn' class='btn btn-default'>Mantenimientos</button></form></section>";
-        var divGeneral = $(stringForm);
-        divGeneral.insertAfter($("#listaDatos"));
-    };
-
-
-    var mostrarMantenimientosTractora = function(mantenimientos){
-        console.log("Pintar mantenimientos");
-        console.log(mantenimientos);
-        borrarPantalla();
-
-        //submenu tractora
-        var stringMenu ="<section><ul id='menutractora' class='nav nav-tabs'>" +
-        " <li> <a data-id='0' data-tractora='" + mantenimientos[0].IdTractora + "' href='#''>Datos Generales</a></li>" +
-        " <li><a data-id='1' data-tractora='" + mantenimientos[0].IdTractora + "' href='#'>Financiación</a></li>" +
-        " <li  class='active'><a data-id='2' data-tractora='" + mantenimientos[0].IdTractora + "' href='#'>Mantenimientos</a></li></ul></section>";
-        var divMenu = $(stringMenu);
-        divMenu.insertAfter($("#listaDatos"));
-
-        //Formulario de búsqueda de un mantenimiento del listado
-        var formBuscarMantenimiento = $("<section id='formBusqueda'>" +
-              "<form id='formBuscarMantenimiento' class='navbar-form navbar-left' role='search'>" +
-              " <article class='form-group'><input type='text' class='form-control' placeholder='Mantenimiento'> </article>" +
-               " <button type='submit' class='btn btn-default'>Buscar</button></form></section>");
-        formBuscarMantenimiento.insertAfter("#menutractora");
-
-         //Listado de mantenimientos
-         var stringTabla = "<section id='divTabla'>" +
-         "<h1>Mantenimientos de Tractora con Id " + mantenimientos[0].IdTractora + "</h1>" +
-         " <table id='listadoMantenimientos' class='table table-striped'>" +
-            "<thead> <tr> <th>ID</th> <th>Fecha</th> <th>Tractora</th> <th>Acciones</th> </tr> </thead>" +
-            "<tbody>";
-         for (var j = 0; j<=mantenimientos.length - 1; j++) {
-             stringTabla+= "<tr> <td>"+ mantenimientos[j].IdMantenimiento +
-              "</td> <td>" + mantenimientos[j].Fecha + "</td>" +
-              "<td>" + mantenimientos[j].IdTractora + "</td>" +
-              " <td> <button data-id=" + mantenimientos[j].IdMantenimiento + "class='btn btn-mini'>Ficha</button>" +
-              "  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
-         }
-         stringTabla+="</tbody> </table></section>";
-        var divTablaTractoras = $(stringTabla);
-        divTablaTractoras.insertAfter($("#formBusqueda"));
-
-
-    };
-
     var mostrarRemolqueFicha = function(remolque){
         console.log("Pintar remolque");
         console.log(remolque);
@@ -396,10 +317,80 @@ APP.UI = (function(lng, undefined) {
         divGeneral.insertAfter($("#listaDatos"));
     };
 
-
     var mostrarActivo = function(li){
         var $li = $(li);
         $li.addClass('active').siblings('.active').removeClass('active');
+    };
+
+
+    var mostrarTractoraFichaEditable = function(tractora){
+        console.log("Pintar tractora");
+        console.log(tractora);
+
+        borrarPantalla();
+
+         //Ficha de tractora
+         var stringForm = "<section id='divGeneral'>" +
+                            "<form id='formFichaTractora' class='form'>"+
+                            "<article class='form-group'>";
+
+            stringForm+="<label class='label label-default' for='idTractora'>IdTractora:</label>";
+            stringForm+= "<input id='idTractora' type='text' class='form-control' placeholder='idTractora' value=" + tractora[0].IdTractora + " > " ;
+            stringForm+="<label class='label label-default' for='matricula'>matricula:</label>";
+            stringForm+= "<input id='matricula' type='text' class='form-control' placeholder='matricula' value=" + tractora[0].Matricula + " > " ;
+            stringForm+="<label class='label label-default' for='seguro'>seguro:</label>";
+            stringForm+= "<input id='seguro' type='text' class='form-control' placeholder='seguro' value=" + tractora[0].seguro + " > " ;
+            stringForm+="<label class='label label-default' for='aseguradora'>aseguradora:</label>";
+            stringForm+= "<input id='aseguradora' type='text' class='form-control' placeholder='aseguradora' value=" + tractora[0].aseguradora + " > " ;
+
+            stringForm+="</article>";
+
+            stringForm+="<button type='submit' class='btn btn-default'>Editar</button>";
+            stringForm+="<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>";
+            stringForm+="<button id='mantenimientosTractoraBtn' class='btn btn-default'>Mantenimientos</button></form></section>";
+        var divGeneral = $(stringForm);
+        divGeneral.insertAfter($("#listaDatos"));
+    };
+
+
+    var mostrarMantenimientosTractora = function(mantenimientos){
+        console.log("Pintar mantenimientos");
+        console.log(mantenimientos);
+        borrarPantalla();
+
+        //submenu tractora
+        var stringMenu ="<section><ul id='menutractora' class='nav nav-tabs'>" +
+        " <li> <a data-id='0' data-tractora='" + mantenimientos[0].IdTractora + "' href='#''>Datos Generales</a></li>" +
+        " <li><a data-id='1' data-tractora='" + mantenimientos[0].IdTractora + "' href='#'>Financiación</a></li>" +
+        " <li  class='active'><a data-id='2' data-tractora='" + mantenimientos[0].IdTractora + "' href='#'>Mantenimientos</a></li></ul></section>";
+        var divMenu = $(stringMenu);
+        divMenu.insertAfter($("#listaDatos"));
+
+        //Formulario de búsqueda de un mantenimiento del listado
+        var formBuscarMantenimiento = $("<section id='formBusqueda'>" +
+              "<form id='formBuscarMantenimiento' class='navbar-form navbar-left' role='search'>" +
+              " <article class='form-group'><input type='text' class='form-control' placeholder='Mantenimiento'> </article>" +
+               " <button type='submit' class='btn btn-default'>Buscar</button></form></section>");
+        formBuscarMantenimiento.insertAfter("#menutractora");
+
+         //Listado de mantenimientos
+         var stringTabla = "<section id='divTabla'>" +
+         "<h1>Mantenimientos de Tractora con Id " + mantenimientos[0].IdTractora + "</h1>" +
+         " <table id='listadoMantenimientos' class='table table-striped'>" +
+            "<thead> <tr> <th>ID</th> <th>Fecha</th> <th>Tractora</th> <th>Acciones</th> </tr> </thead>" +
+            "<tbody>";
+         for (var j = 0; j<=mantenimientos.length - 1; j++) {
+             stringTabla+= "<tr> <td>"+ mantenimientos[j].IdMantenimiento +
+              "</td> <td>" + mantenimientos[j].Fecha + "</td>" +
+              "<td>" + mantenimientos[j].IdTractora + "</td>" +
+              " <td> <button data-id=" + mantenimientos[j].IdMantenimiento + "class='btn btn-mini'>Ficha</button>" +
+              "  <button class='btn btn-mini btn-danger'>Borrar</button></td></tr> ";
+         }
+         stringTabla+="</tbody> </table></section>";
+        var divTablaTractoras = $(stringTabla);
+        divTablaTractoras.insertAfter($("#formBusqueda"));
+
+
     };
 
     var mostrarLogin = function(){
@@ -442,7 +433,7 @@ APP.UI = (function(lng, undefined) {
               "<div class='col-lg-6'>" +
                   "<div class='input-group'>" +
                         "<span class='input-group-addon'>" +
-                                "<input id='checkboxLogin' type='checkbox'>" +
+                                "<input type='checkbox'>" +
                                       "</span>" +
                     "<input type='text' class='form-control' readonly placeholder='Recordar usuario (localstorage)'>" +
                         "</div><!-- /input-group -->" +
@@ -459,9 +450,8 @@ APP.UI = (function(lng, undefined) {
                     "  </div><!-- /.col-lg-6 -->" +
                     "</div><!-- /.row -->" +
                     "</section>");
-        loginSection.insertAfter("#navbar");
+        loginSection.insertAfter("#listaDatos");
     };
-
 
     var mostrarMenuInicio = function (usuario) {
         console.log("Pintar menu");
@@ -481,19 +471,10 @@ APP.UI = (function(lng, undefined) {
       "</div>" +
       "<div class='collapse navbar-collapse' id='navbar-collapse'>" +
         "<ul id='principal' class='nav navbar-nav'>" +
-          "<li id='tractoras'><a href='#''>Tractoras</a></li>" +
-          "<li id='remolques'><a href='#'>Remolques</a></li>" +
-          "<li id='talleres'><a href='#''>Talleres</a></li>" +
-          "<li id='aseguradoras'><a href='#'>Aseguradoras</a></li>" +
         "</ul>" +
 
         "<ul class='nav navbar-nav navbar-right'>" +
-            "<li class='dropdown'>" +
-            "<a id='usuarioNav' href='#' class='dropdown-toggle' data-toggle='dropdown'>" + usuario + "<b class='caret'></b></a>" +
-              "<ul class='dropdown-menu'>" +
-              "<li id='sessionLogOut'><a href='#'>Cerrar sesión</a></li>" +
-              "</ul>" +
-            "</li>" +
+       " <li><a id='usuarioMenu' href='#''>" + usuario + "</a></li>" +
       "</ul>" +
 
       "</div>" +
@@ -501,31 +482,28 @@ APP.UI = (function(lng, undefined) {
   "</nav>");
         nav.insertAfter("#listaDatos");
 
-      var menucentral = $("<section id='menucentral'> <ul class='list-group'>" +
-                  "<li class='list-group-item'>Tractoras</li>" +
-                  "<li class='list-group-item'>Remolques</li>" +
-                  "<li class='list-group-item'>Talleres</li>" +
-                  "<li class='list-group-item'>Aseguradoras</li>" +
-                  "</ul></section>");
+        //document.getElementById("usuarioMenu").innerText = usuario;
 
-        menucentral.insertAfter("#navbar");
     };
+
 
     return {
         mostrarTractoras : mostrarTractoras,
-        mostrarRemolques : mostrarRemolques,
-        mostrarTalleres : mostrarTalleres,
-        mostrarAseguradoras : mostrarAseguradoras,
+        mostrarActivo : mostrarActivo,
         mostrarTractoraFichaDatosGenerales : mostrarTractoraFichaDatosGenerales,
         mostrarTractoraFichaFinanciacion : mostrarTractoraFichaFinanciacion,
-        mostrarTractoraFichaEditable : mostrarTractoraFichaEditable,
-        mostrarMantenimientosTractora : mostrarMantenimientosTractora,
         mostrarRemolqueFicha : mostrarRemolqueFicha,
         mostrarTallerFicha : mostrarTallerFicha,
         mostrarAseguradoraFicha : mostrarAseguradoraFicha,
-        mostrarActivo : mostrarActivo,
+        mostrarRemolques : mostrarRemolques,
+        mostrarTalleres : mostrarTalleres,
+        mostrarAseguradoras : mostrarAseguradoras,
+        mostrarTractoraFichaEditable : mostrarTractoraFichaEditable,
+        mostrarMantenimientosTractora : mostrarMantenimientosTractora,
         mostrarLogin : mostrarLogin,
-        mostrarMenuInicio : mostrarMenuInicio
+        mostrarMenuInicio : mostrarMenuInicio,
+        mostrarNav : mostrarNav,
+        mostrarEmptyNav : mostrarEmptyNav
     };
 
 })();

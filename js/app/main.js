@@ -1,4 +1,4 @@
-$(function(){
+    $(function(){
     "use strict";
 
     //Modernizr
@@ -31,16 +31,23 @@ $(function(){
     if (usuarioLocal == null){
         if (usuarioSesion == null){
             console.log("no hay usuarios guardados");
+            //pintar login
+            APP.Controller.showLogin();
         }
         else{
-            document.getElementById("usuarioMenu").value = usuarioSesion;
+
             console.log("usuarioSesion");
             console.log(usuarioSesion);
+            console.log(document.getElementById("usuarioMenu"));
+            //pintar menu inicio
+            APP.Controller.showMenuInicio(usuarioSesion);
         }
     }
     else{
-            document.getElementById("usuarioMenu").value = usuarioLocal;
+
             console.log("usuarioLocal");
+            //pintar menu inicio
+            APP.Controller.showMenuInicio(usuarioLocal);
     }
 
 
