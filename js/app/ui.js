@@ -23,6 +23,65 @@ APP.UI = (function(lng, undefined) {
 
     };
 
+    var drawList = function(earthquakes) {
+        console.log('[UI] Drawing the list');
+
+        // TODO: precompile templates
+        var template = Handlebars.getTemplate('prueba');
+
+        console.log(template);
+        var data  = [
+          {  _id : 1,  title : 'Earthquake', date  : '2014-04-05', mag : 3.8 },
+          {  _id : 2,  title : 'Earthquake', date  : '2014-04-06', mag : 5.4 },
+          {  _id : 3,  title : 'Earthquake', date  : '2014-04-07', mag : 2.2 }
+        ];
+
+        var html  = template({earthquakes : data});
+        console.log(html);
+        $('#navbar').append(html);
+        //$('#navbar').append(Handlebars.templates['prueba']({earthquakes : [{title:'sdfdsfdsfdsfds'}]}));
+        //$('#navbar').append(Handlebars.templates['prueba']({earthquakes : sections}));
+    };
+
+    Handlebars.getTemplate = function(name){
+        if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
+          console.log('if');
+            var response = $.ajax({
+                url : 'views/' + name + '.hbs',
+                // success : function(data) {
+                //     console.log('[UI template ' + name + ' loaded]');
+                //     if (Handlebars.templates === undefined) {
+                //         Handlebars.templates = {};
+                //     }
+                //     Handlebars.templates[name] = Handlebars.compile(data);
+                // },
+                error : function(xhr, type) {
+                    console.error('[UI error loading template ' + name + ']');
+                    console.error(xhr, type);
+                },
+                dataType: 'html',
+                async : false
+            });
+
+            if (Handlebars.templates === undefined) {
+                Handlebars.templates = {};
+            }
+            console.log(response.responseText);
+            //Handlebars.templates[name] = Handlebars.compile(response.responseText);
+            var template = Handlebars.compile(response.responseText);
+
+            console.log(template);
+
+            // var script = document.createElement('script');
+            // script.type  = 'text/javascript';
+            // script.text = response;
+            // document.body.appendChild(script);
+        }
+
+        return template;
+    };
+
+
     var borrarNav = function(){
       console.log('borrarNav');
         var $menutractora = $('#navbar');
@@ -35,12 +94,24 @@ APP.UI = (function(lng, undefined) {
         borrarPantalla();
 
         //Formulario de búsqueda de una tractora del listado
+        var template = Handlebars.getTemplate('busqueda');
+
+        console.log(template);
+        var data  = { placeholde : 'Matrícula'};
+
+        var html  = template(data);
+        console.log(html);
+        //$('#navbar').append(html);
+
+        $(html).insertAfter('#navbar');
+
+/*
         var formBuscarTractora = $('<section id=formBusqueda>' +
           '<form id=formBuscarTractora class=navbar-form navbar-left role=search>' +
           '<article class=form-group>  <input type=search class=form-control placeholder=Matricula> </article>' +
            ' <button type=submit class=btn btn-default>Buscar</button></form></section>');
         formBuscarTractora.insertAfter('#navbar');
-
+*/
          //Listado de tractoras
          var stringTabla = "<section id='divTabla' class='centrado'><h1>Tractoras</h1>" +
          "<table id='listadoTractoras' class='table table-striped'>" +
@@ -452,6 +523,9 @@ APP.UI = (function(lng, undefined) {
     "</div> <!-- /container -->");
 
          loginSection.insertAfter("#navbar");
+
+
+         drawList();
     };
 
 
