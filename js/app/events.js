@@ -1,6 +1,7 @@
     $(function(){
         "use strict";
 
+        $(document).on('click', '#botoninicio', APP.Controller.showMenuInicio);
         $(document).on('click', '#tractoras', APP.Controller.showTractoras);
         $(document).on('click', '#remolques', APP.Controller.showRemolques);
         $(document).on('click', '#talleres', APP.Controller.showTalleres);
@@ -14,6 +15,5 @@
         $(document).on('click', '#menutractora li', APP.Controller.showCambioPestana);
         $(document).on('click', '#botonLogin', APP.Controller.login);
         $(document).on('click', '#sessionLogOut', APP.Controller.unlogin);
-
 
     });

@@ -1,0 +1,21 @@
+<section id='divTabla'>
+  <h1>Talleres</h1>
+    <table id='listadoTalleres' class='table table-striped'>
+      <thead> <tr> <th>ID</th> <th>Nombre</th> <th>Direccion</th> <th>Acciones</th> </tr> </thead>
+        <tbody>
+          {{#each listado}}
+          <tr>
+          <td> {{IdTaller}}
+          </td>
+          <td> {{Nombre}}
+          </td>
+          <td> {{Direccion}}</td>
+          <td>
+            <button data-id= {{IdTaller}} class='btn btn-mini'>Ficha</button>
+            <button class='btn btn-mini btn-danger'>Borrar</button>
+          </td>
+          </tr>
+         {{/each}}
+         </tbody>
+    </table>
+</section>

@@ -54,6 +54,14 @@ APP.Controller = (function() {
         }, e.target.dataset.id);
     };
 
+    var showModificarDatosTractora = function(e){
+        console.log('showModificarDatosTractora');
+        APP.UI.mostrarActivo(this);
+        APP.Pedir.getTractora(function(tractora, textStatus, jqXHR){
+            APP.UI.mostrarTractoraFichaEditable(tractora);
+        }, e.target.dataset.id);
+    };
+
     var showTractoraFichaDatosGenerales = function(e){
         console.log('showTractoraFicha');
         console.log(e);
@@ -103,12 +111,6 @@ APP.Controller = (function() {
         APP.Pedir.getAseguradora(function(aseguradora, textStatus, jqXHR){
             APP.UI.mostrarAseguradoraFicha(aseguradora);
         }, e.target.dataset.id);
-    };
-
-    var showModificarDatosTractora = function(e){
-        console.log('showModificarDatosTractora');
-        APP.UI.mostrarActivo(this);
-        APP.UI.mostrarTractoraFichaEditable(e);
     };
 
     var showMantenimientosTractora = function(e){

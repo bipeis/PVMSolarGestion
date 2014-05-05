@@ -1,0 +1,13 @@
+<div id='divTabla'>
+<h1>Aseguradoras</h1>
+         <table id='listadoAseguradoras' class='table table-striped'>
+            <thead> <tr> <th>ID</th> <th>Nombre</th> <th>Direccion</th> <th>Acciones</th> </tr> </thead>
+            <tbody>
+            {{#each listado}}
+            <tr> <td> {{IdAseguradora}}
+            </td> <td> {{Nombre}} </td> <td>
+            </td> <td> <button data-id= {{IdAseguradora}} class='btn btn-mini'>Ficha</button>
+             <button class='btn btn-mini btn-danger'>Borrar</button></td></tr>
+         {{/each}}
+        </tbody>
+        </table></div>

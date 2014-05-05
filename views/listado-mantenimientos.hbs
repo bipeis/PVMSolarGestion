@@ -1,0 +1,19 @@
+<section id='divTabla'>
+	<h1>Mantenimientos de Tractora con Id {{IdTractora}} </h1>
+    <table id='listadoMantenimientos' class='table table-striped'>
+    	<thead> <tr> <th>ID</th> <th>Fecha</th> <th>Tractora</th> <th>Acciones</th> </tr> </thead>
+        	<tbody>
+        	{{#each listado}}
+        	<tr>
+        		<td> {{IdMantenimiento}} </td>
+        		<td> {{Fecha}} </td>
+        		<td> {{IdTractora}} </td>
+        		<td>
+        			<button data-id= {{IdMantenimiento}} class='btn btn-mini'>Ficha</button>
+              		<button class='btn btn-mini btn-danger'>Borrar</button>
+              	</td>
+             </tr>
+        	{{/each}}
+        	</tbody>
+    </table>
+</section>

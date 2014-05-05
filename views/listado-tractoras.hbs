@@ -1,0 +1,27 @@
+<section id='divTabla' class='centrado'>
+	<h1>Tractoras</h1>
+    <table id='listadoTractoras' class='table table-striped'>
+    	<thead>
+    		<tr>
+    			<th>ID</th>
+    			<th>Matricula</th>
+    			<th>Marca</th>
+    			<th>Acciones</th>
+    		</tr>
+    	</thead>
+        <tbody>
+        {{#each listado}}
+		<tr>
+			<td> {{IdTractora}} </td>
+			<td> {{Matricula}}  </td>
+            <td> {{Marca}}      </td>
+            <td>
+            	<button data-id= {{IdTractora}} class='btn btn-mini'>Ficha</button>
+              	<button class='btn btn-mini btn-danger'>Borrar</button>
+            </td>
+        </tr>
+        {{/each}}
+
+        </tbody>
+	</table>
+</section>
