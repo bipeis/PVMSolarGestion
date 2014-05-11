@@ -307,6 +307,26 @@ APP.Controller = (function() {
 
     };
 
+    var nuevaTractora = function(){
+        console.log('nuevaTractora');
+
+        APP.UI.mostrarNuevaTractora();
+    };
+
+    var crearNuevaTractora = function(){
+        console.log('crearNuevaTractora');
+
+        APP.UI.mostrarActivo(this);
+        APP.Pedir.crearTractora(function(tractora, textStatus, jqXHR){
+            console.log('tractora');
+            console.log(tractora);
+            var respuesta = JSON.parse(jqXHR.responseText);
+
+            APP.UI.mostrarTractoraFichaDatosGenerales(respuesta,'ficha-tractora-datos-generales','not');
+        });
+
+    };
+
 
     return {
         showTractoras : showTractoras,
@@ -332,6 +352,8 @@ APP.Controller = (function() {
         guardarCambiosTractoraFinanciacion : guardarCambiosTractoraFinanciacion,
         showTractoraFichaEditable : showTractoraFichaEditable,
         showTractoraFichaFinanciacionEditable : showTractoraFichaFinanciacionEditable,
-        borrarTractora : borrarTractora
+        borrarTractora : borrarTractora,
+        nuevaTractora : nuevaTractora,
+        crearNuevaTractora : crearNuevaTractora
     };
 })();

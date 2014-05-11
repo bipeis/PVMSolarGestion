@@ -216,6 +216,38 @@ APP.Pedir = (function(){
         });
     };
 
+
+    var crearTractora = function(devolverTractora){
+        console.log('crearTractora');
+
+        var idTr = document.getElementById('idTractora').value;
+        var matr = document.getElementById('matricula').value;
+        var marc = document.getElementById('marca').value;
+        var model = document.getElementById('modelo').value;
+        var cateur = document.getElementById('cateur').value;
+        var valorcompra = document.getElementById('valorcompra').value;
+        var itv1 = document.getElementById('itv1').value;
+        var itv2 = document.getElementById('itv2').value;
+
+        $.ajax({
+                url : 'data/tractoraNueva.php',
+                cache : false,
+                dataType : 'json',
+                type : 'POST',
+                data : {
+                 idTractora: idTr,
+                 matricula : matr,
+                 marca : marc,
+                 modelo : model,
+                 catEur : cateur,
+                 valorCompra : valorcompra,
+                 Itv1 : itv1,
+                 Itv2 : itv2 },
+                success : devolverTractora,
+                error : errorAjax
+        });
+    };
+
     return{
         getInfo : getInfo,
         getTractora : getTractora,
@@ -230,7 +262,8 @@ APP.Pedir = (function(){
         getLogin : getLogin,
         updateTractora : updateTractora,
         updateTractoraFinanciacion : updateTractoraFinanciacion,
-        deleteTractora : deleteTractora
+        deleteTractora : deleteTractora,
+        crearTractora : crearTractora
     };
 
 })();

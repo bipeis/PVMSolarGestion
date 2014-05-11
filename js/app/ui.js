@@ -473,6 +473,19 @@ APP.UI = (function(lng, undefined) {
 
     };
 
+    var mostrarNuevaTractora = function(){
+
+      console.log('mostrarNuevaTractora');
+
+      //template nav
+      var template = Handlebars.getTemplate('nueva-tractora');
+
+      var html  = template();
+
+      $(html).insertAfter('#listaDatos');
+
+    };
+
     return {
         mostrarTractoras : mostrarTractoras,
         mostrarRemolques : mostrarRemolques,
@@ -488,7 +501,8 @@ APP.UI = (function(lng, undefined) {
         mostrarActivo : mostrarActivo,
         mostrarLogin : mostrarLogin,
         mostrarMenuInicio : mostrarMenuInicio,
-        mostrarNav : mostrarNav
+        mostrarNav : mostrarNav,
+        mostrarNuevaTractora : mostrarNuevaTractora
     };
 
 })();
