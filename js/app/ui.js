@@ -25,7 +25,6 @@ APP.UI = (function(lng, undefined) {
 
     Handlebars.getTemplate = function(name){
         if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
-          console.log('if');
             var response = $.ajax({
                 url : 'views/' + name + '.hbs',
                 // success : function(data) {
@@ -46,11 +45,11 @@ APP.UI = (function(lng, undefined) {
             if (Handlebars.templates === undefined) {
                 Handlebars.templates = {};
             }
-            console.log(response.responseText);
+            //console.log(response.responseText);
             //Handlebars.templates[name] = Handlebars.compile(response.responseText);
             var template = Handlebars.compile(response.responseText);
 
-            console.log(template);
+            //console.log(template);
 
             // var script = document.createElement('script');
             // script.type  = 'text/javascript';
@@ -93,7 +92,7 @@ APP.UI = (function(lng, undefined) {
         var html  = template(data);
         console.log(html);
 
-        $(html).insertAfter('#formBusqueda');
+        $(html).insertAfter('#busqueda');
 
     };
 
@@ -188,9 +187,10 @@ APP.UI = (function(lng, undefined) {
     };
 
 
-    var mostrarTractoraFichaDatosGenerales = function(tractora){
+    var mostrarTractoraFichaDatosGenerales = function(tractora,plantilla,editando){
         console.log("Pintar tractora");
         console.log(tractora);
+        console.log(plantilla);
 
         borrarPantalla();
 
@@ -198,7 +198,8 @@ APP.UI = (function(lng, undefined) {
         var template = Handlebars.getTemplate('menupestanas-tractora');
 
         var data  = {
-            IdTractora : tractora[0].IdTractora
+            IdTractora : tractora[0].IdTractora,
+            editing : editando
           };
 
         var html  = template(data);
@@ -209,7 +210,7 @@ APP.UI = (function(lng, undefined) {
 
 
          //Ficha de tractora datos generales
-       var template = Handlebars.getTemplate('ficha-tractora-datos-generales');
+       var template = Handlebars.getTemplate(plantilla);
 
         var data  = {
             IdTractora : tractora[0].IdTractora,
@@ -222,13 +223,22 @@ APP.UI = (function(lng, undefined) {
             itv2 : tractora[0].itv2,
           };
 
+        sessionStorage.setItem('IdTractora', tractora[0].IdTractora);
+        sessionStorage.setItem('Matricula', tractora[0].Matricula);
+        sessionStorage.setItem('Marca', tractora[0].Marca);
+        sessionStorage.setItem('Modelo', tractora[0].Modelo);
+        sessionStorage.setItem('CatEur', tractora[0].CatEur);
+        sessionStorage.setItem('ValorCompra', tractora[0].ValorCompra);
+        sessionStorage.setItem('itv1', tractora[0].itv1);
+        sessionStorage.setItem('itv2', tractora[0].itv2);
+
         var html  = template(data);
 
         $(html).insertAfter('#menutractora');
 
     };
 
-    var mostrarTractoraFichaFinanciacion = function(tractora){
+    var mostrarTractoraFichaFinanciacion = function(tractora,plantilla,editando){
         console.log("Pintar tractora Financiación");
         console.log(tractora);
 
@@ -238,7 +248,8 @@ APP.UI = (function(lng, undefined) {
         var template = Handlebars.getTemplate('menupestanas-tractora');
 
         var data  = {
-            IdTractora : tractora[0].IdTractora
+            IdTractora : tractora[0].IdTractora,
+            editing : editando
           };
 
         var html  = template(data);
@@ -248,7 +259,7 @@ APP.UI = (function(lng, undefined) {
         mostrarActivo($('#financiacion'));
 
 
-       var template = Handlebars.getTemplate('ficha-tractora-financiacion');
+       var template = Handlebars.getTemplate(plantilla);
 
         var data  = {
             IdTractora : tractora[0].IdTractora,
@@ -259,6 +270,7 @@ APP.UI = (function(lng, undefined) {
             FinanciacionFechaFin : tractora[0].FinanciacionFechaFin,
             FinanciacionCuotaMensual : tractora[0].FinanciacionCuotaMensual,
             FinanciacionCutotaResidual : tractora[0].FinanciacionCutotaResidual,
+            SeguroIncluido : tractora[0].SeguroIncluido
           };
 
         var html  = template(data);

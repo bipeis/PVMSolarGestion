@@ -1,4 +1,4 @@
-<section id='divTabla' class='centrado'>
+<section id='divTabla'>
 	<h1>Tractoras</h1>
     <table id='listadoTractoras' class='table table-striped'>
     	<thead>
@@ -16,8 +16,8 @@
 			<td> {{Matricula}}  </td>
             <td> {{Marca}}      </td>
             <td>
-            	<button data-id= {{IdTractora}} class='btn btn-mini'>Ficha</button>
-              	<button class='btn btn-mini btn-danger'>Borrar</button>
+            	<button id='fichaBtn' data-idtractora= {{IdTractora}} class='btn btn-mini btn-ficha'>Ficha</button>
+              	<button id='borrarBtn' data-idtractora= {{IdTractora}} class='btn btn-mini btn-danger btn-borrar'>Borrar</button>
             </td>
         </tr>
         {{/each}}

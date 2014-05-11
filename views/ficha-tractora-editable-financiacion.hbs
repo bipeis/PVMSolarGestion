@@ -6,31 +6,31 @@
                   <input id='idTractora' type='text' readonly class='form-control' placeholder='idTractora' value= {{IdTractora}} >
 
                   <label class='label label-default' for='matricula'>Matrícula:</label>
-                  <input id='matricula' type='text' readonly class='form-control' placeholder='matricula' value= {{Matricula}} >
+                  <input id='matricula' type='text' class='form-control' placeholder='matricula' value= {{Matricula}} >
 
                   <label class='label label-default' for='entidad'>Entidad:</label>
-                  <input id='entidad' type='text' readonly class='form-control' placeholder='entidad' value= {{FinanciacionEntidad}} >
+                  <input id='entidad' type='text' class='form-control' placeholder='entidad' value= {{FinanciacionEntidad}} >
 
                   <label class='label label-default' for='contrato'>Contrato:</label>
-                  <select id='contrato' readonly class='form-control' value= {{FinanciacionContrato}}>
+                  <select id='contrato' class='form-control' value= {{FinanciacionContrato}}>
                         <option label='Leasing' value='Leasing'>Leasing</option>
                         <option label='Renting' value='Renting'>Renting</option>
                   </select>
 
                   <label class='label label-default' for='fechainicio'>Fecha Inicio Contrato:</label>
-                  <input id='fechainicio' type='date' readonly class='form-control' placeholder='fechainicio' value= {{FinanciacionFechaInicio}} >
+                  <input id='fechainicio' type='date' class='form-control' placeholder='fechainicio' value= {{FinanciacionFechaInicio}} >
 
                   <label class='label label-default' for='fechafin'>Fecha Finalización:</label>
-                  <input id='fechafin' type='date' readonly class='form-control' placeholder='fecha finalización' value= {{FinanciacionFechaFin}} >
+                  <input id='fechafin' type='date' class='form-control' placeholder='fecha finalización' value= {{FinanciacionFechaFin}} >
 
                   <label class='label label-default' for='cuotamensual'>Cuota mensual:</label>
-                  <input id='cuotamensual' type='text' readonly class='form-control' placeholder='cuotamensual' value= {{FinanciacionCuotaMensual}} >
+                  <input id='cuotamensual' type='text' class='form-control' placeholder='cuotamensual' value= {{FinanciacionCuotaMensual}} >
 
                   <label class='label label-default' for='cuotaresidual'>Cuota residual:</label>
-                  <input id='cuotaresidual' type='text' readonly class='form-control' placeholder='cuotaresidual' value= {{FinanciacionCutotaResidual}} >
+                  <input id='cuotaresidual' type='text' class='form-control' placeholder='cuotaresidual' value= {{FinanciacionCutotaResidual}} >
 
                   <label class='label label-default' for='seguroincluido'>Seguro incluido?:</label>
-                  <select id='seguroincluido' readonly class='form-control'>
+                  <select id='seguroincluido' class='form-control'>
                         <option label='Si' value='Sí'>Si</option>
                         <option label='No' value='No'>No</option>
                   </select>
@@ -38,7 +38,7 @@
 
             </article>
 
-            <button id='editarTractoraFinanciacionBtn' data-id= {{IdTractora}} class='btn btn-default'>Editar</button>
-            <button id='volverListaDesdeFinanciacionBtn' class='btn btn-default'>Volver a la lista</button>
+            <button id='guardarCambiosTractoraFinanciacionBtn' data-idtractora= {{IdTractora}} class='btn btn-default'>Guardar cambios</button>
+            <button id='cancelEditFinanciacionBtn' data-idtractora= {{IdTractora}}  class='btn btn-default'>Cancelar</button>
       </form>
 </section>

@@ -4,30 +4,31 @@
                   <label class='label label-default' for='idTractora'>IdTractora:</label>
                   <input id='idTractora' type='number' readonly class='form-control' placeholder='idTractora' required value= {{IdTractora}} >
                   <label class='label label-default' for='matricula'>Matrícula:</label>
-                  <input id='matricula' type='text' readonly class='form-control' placeholder='matricula' required value= {{Matricula}} >
+                  <input id='matricula' type='text' class='form-control' placeholder='matricula' required value= {{Matricula}} >
                   <label class='label label-default' for='marca'>Marca:</label>
-                  <input id='marca' type='text' readonly class='form-control' placeholder='marca' list='listamarcas' value= {{Marca }} >
+                  <input id='marca' type='text' class='form-control' placeholder='marca' list='listamarcas' value= {{Marca }} >
                   <datalist id='listamarcas'>
                         <option label='Seat' value='Seat'>
                         <option label='Scania' value='Scania'>
                         <option label='Mercedes' value='Mercedes'>
                   </datalist>
                   <label class='label label-default' for='modelo'>Modelo:</label>
-                  <input id='modelo' type='text' readonly class='form-control' placeholder='modelo' value= {{Modelo}} >
+                  <input id='modelo' type='text' class='form-control' placeholder='modelo' value= {{Modelo}} >
                   <label class='label label-default' for='cateur'>Cat. Eur:</label>
-                  <input id='cateur' type='text' readonly class='form-control' placeholder='cateur' value= {{CatEur}} >
+                  <input id='cateur' type='text' class='form-control' placeholder='cateur' value= {{CatEur}} >
                   <label class='label label-default' for='valorcompra'>Valor de compra:</label>
-                  <input id='valorcompra' type='text' readonly class='form-control' placeholder='valorcompra' value= {{ValorCompra}} >
+                  <input id='valorcompra' type='text' class='form-control' placeholder='valorcompra' value= {{ValorCompra}} >
                   <label class='label label-default' for='itv1'>ITV - fecha 1ª revisión:</label>
-                  <input id='itv1' type='date' readonly class='form-control' placeholder='itv1' value= {{itv1}} >
+                  <input id='itv1' type='date' class='form-control' placeholder='itv1' value= {{itv1}} >
                   <label class='label label-default' for='itv2'>ITV - fecha 2ª revisión:</label>
-                  <input id='itv2' type='date' readonly class='form-control' placeholder='itv2' value= {{itv2}} >
+                  <input id='itv2' type='date' class='form-control' placeholder='itv2' value= {{itv2}} >
 
             </article>
 
             <!--<input type='submit' value='Enviar' class='btn btn-default'>-->
             <!--<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>-->
-            <button id='editarTractoraBtn' data-id= {{IdTractora}} class='btn btn-default'>Editar</button>
-            <button id='volverListaBtn' class='btn btn-default'>Volver a la lista</button>
+
+            <button id='guardarCambiosTractoraBtn' data-idtractora= {{IdTractora}} class='btn btn-default'>Guardar cambios</button>
+            <button id='cancelEditBtn' data-idtractora= {{IdTractora}}  class='btn btn-default'>Cancelar</button>
       </form>
 </section>

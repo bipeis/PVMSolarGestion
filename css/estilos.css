@@ -13,7 +13,12 @@ li .btn{
 #divTabla
 {
 	margin: 50px auto 0 auto;
-    width: 90%;
+    width: 60%;
+}
+
+.right
+{
+	float: right;
 }
 
 #loginsection
@@ -25,10 +30,21 @@ li .btn{
 #menucentral
 {
 	margin: 2% auto 0 auto;
-    width: 80%;
+    width: 50%;
 }
 
 #botonLogin
 {
 	background-color: #3276b1;
+}
+
+#sectionFicha
+{
+	margin: 2% auto 0 auto;
+    width: 80%;
+}
+
+#busqueda
+{
+	width: 100%;
 }
