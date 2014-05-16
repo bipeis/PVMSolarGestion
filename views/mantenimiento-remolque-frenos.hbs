@@ -1,0 +1,42 @@
+<section id='divGeneral' class='centradoListas'>
+      <h1>Ficha Mantenimiento Remolque Frenos</h1>
+      <form id='formFichaMantenimiento' class='form' action=''>
+            <article class='form-group'>
+                  <label class='label label-default' for='id'>IdMantenimiento:</label>
+                  <input id='id' type='number' readonly class='form-control' placeholder='id' required value= {{id}} >
+
+                  <label class='label label-default' for='Remolque'>Remolque:</label>
+                  <input id='Remolque' type='text' readonly class='form-control' placeholder='Remolque' required value= {{Remolque}} >
+
+                  <label class='label label-default' for='Mantenimiento'>Mantenimiento:</label>
+                  <input id='Mantenimiento' type='text' readonly class='form-control' placeholder='Mantenimiento' value= {{Mantenimiento }} >
+
+                  <label class='label label-default' for='Taller'>Taller:</label>
+                  <input id='Taller' type='text' readonly class='form-control' placeholder='Taller' value= {{Taller}} >
+
+                  <label class='label label-default' for='Eje1'>Eje1:</label>
+                  <input id='Eje1' type='text' readonly class='form-control' placeholder='Eje1' value= {{Eje1}} >
+
+                  <label class='label label-default' for='Eje2'>Eje2:</label>
+                  <input id='Eje2' type='text' readonly class='form-control' placeholder='Eje2' value= {{Eje2}} >
+
+                  <label class='label label-default' for='Eje3'>Eje3:</label>
+                  <input id='Eje3' type='text' readonly class='form-control' placeholder='Eje3' value= {{Eje3}} >
+
+                  <label class='label label-default' for='Fecha'>Fecha:</label>
+                  <input id='Fecha' type='text' readonly class='form-control' placeholder='Fecha' value= {{Fecha}} >
+
+                  <label class='label label-default' for='Tipo'>Tipo:</label>
+                  <input id='Tipo' type='date' readonly class='form-control' placeholder='Tipo' value= {{Tipo}} >
+
+                  <label class='label label-default' for='GastoAcumulado'>GastoAcumulado:</label>
+                  <input id='GastoAcumulado' type='date' readonly class='form-control' placeholder='GastoAcumulado' value= {{GastoAcumulado}} >
+
+            </article>
+
+            <!--<input type='submit' value='Enviar' class='btn btn-default'>-->
+            <!--<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>-->
+            <button id='editarMantenimientoBtn' data-id= {{id}} class='btn btn-default'>Editar</button>
+            <button id='volverListaBtn' class='btn btn-default'>Volver a la lista</button>
+      </form>
+</section>

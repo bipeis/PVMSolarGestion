@@ -1,14 +1,83 @@
-<section id='divGeneral'>
+<section id='divGeneral' class='centrado'>
+    <h1>Ficha Aseguradora</h1>
     <form id='formFichaAseguradora' class='form'>
         <article class='form-group'>
+
             <label class='label label-default' for='idAseguradora'>idAseguradora:</label>
             <input id='idAseguradora' type='text' class='form-control' placeholder='idAseguradora' value= {{ IdAseguradora }}  >
+
             <label class='label label-default' for='nombre'>Nombre:</label>
             <input id='nombre' type='text' class='form-control' placeholder='Nombre' value= {{ Nombre }}  >
+
             <label class='label label-default' for='direccion'>Direccion:</label>
             <input id='direccion' type='text' class='form-control' placeholder='Direccion' value= {{ direccion }}>
-            <label class='label label-default' for='telefono'>Telefono:</label>
-            <input id='telefono' type='tel' class='form-control' placeholder='telefono' value= {{ telefono }}>
+
+            <label class='label label-default' for='poblacion'>Población:</label>
+            <input id='poblacion' type='tel' class='form-control' placeholder='poblacion' value= {{ poblacion }}>
+
+            <label class='label label-default' for='codigoPostal'>Codigo Postal:</label>
+            <input id='codigoPostal' type='text' class='form-control' placeholder='codigoPostal' value= {{ codigoPostal }}  >
+
+            <label class='label label-default' for='Pais'>Pais:</label>
+            <input id='Pais' type='text' class='form-control' placeholder='Pais' value= {{ Pais }}>
+
+            <label class='label label-default' for='GerenciaTelefono'>GerenciaTelefono:</label>
+            <input id='GerenciaTelefono' type='tel' class='form-control' placeholder='GerenciaTelefono' value= {{ GerenciaTelefono }}>
+
+            <label class='label label-default' for='GerenciaContacto'>GerenciaContacto:</label>
+            <input id='GerenciaContacto' type='text' class='form-control' placeholder='GerenciaContacto' value= {{ GerenciaContacto }}  >
+
+            <label class='label label-default' for='AdminTelefono'>AdminTelefono:</label>
+            <input id='AdminTelefono' type='text' class='form-control' placeholder='AdminTelefono' value= {{ AdminTelefono }}>
+
+            <label class='label label-default' for='AdminContacto'>AdminContacto:</label>
+            <input id='AdminContacto' type='tel' class='form-control' placeholder='AdminContacto' value= {{ AdminContacto }}>
+
+            <label class='label label-default' for='SiniestrosTelefono'>SiniestrosTelefono:</label>
+            <input id='SiniestrosTelefono' type='tel' class='form-control' placeholder='SiniestrosTelefono' value= {{ SiniestrosTelefono }}>
+
+            <label class='label label-default' for='SiniestrosContacto'>SiniestrosContacto:</label>
+            <input id='SiniestrosContacto' type='text' class='form-control' placeholder='SiniestrosContacto' value= {{ SiniestrosContacto }}  >
+
+            <label class='label label-default' for='AsistenciaTelefono'>AsistenciaTelefono:</label>
+            <input id='AsistenciaTelefono' type='text' class='form-control' placeholder='AsistenciaTelefono' value= {{ AsistenciaTelefono }}>
+
+            <label class='label label-default' for='AsistenciaContacto'>AsistenciaContacto:</label>
+            <input id='AsistenciaContacto' type='tel' class='form-control' placeholder='AsistenciaContacto' value= {{ AsistenciaContacto }}>
+
+            <label class='label label-default' for='HorariosTrabajo'>HorariosTrabajo:</label>
+            <input id='HorariosTrabajo' type='text' class='form-control' placeholder='HorariosTrabajo' value= {{ HorariosTrabajo }}>
+
+            <label class='label label-default' for='FormaPago'>FormaPago:</label>
+            <input id='FormaPago' type='tel' class='form-control' placeholder='FormaPago' value= {{ FormaPago }}>
+
+            <label class='label label-default' for='TarifasCamionesSeguroObligatorio'>TarifasCamionesSeguroObligatorio:</label>
+            <input id='TarifasCamionesSeguroObligatorio' type='tel' class='form-control' placeholder='TarifasCamionesSeguroObligatorio' value= {{ TarifasCamionesSeguroObligatorio }}>
+
+            <label class='label label-default' for='TarifasCamionesTodoRiesgo'>TarifasCamionesTodoRiesgo:</label>
+            <input id='TarifasCamionesTodoRiesgo' type='tel' class='form-control' placeholder='TarifasCamionesTodoRiesgo' value= {{ TarifasCamionesTodoRiesgo }}>
+
+            <label class='label label-default' for='TarifasCamionesAsistencia'>TarifasCamionesAsistencia:</label>
+            <input id='TarifasCamionesAsistencia' type='tel' class='form-control' placeholder='TarifasCamionesAsistencia' value= {{ TarifasCamionesAsistencia }}>
+
+            <label class='label label-default' for='TarifasCamionesCobertura'>TarifasCamionesCobertura:</label>
+            <input id='TarifasCamionesCobertura' type='tel' class='form-control' placeholder='TarifasCamionesCobertura' value= {{ TarifasCamionesCobertura }}>
+
+            <label class='label label-default' for='TarifasCamionesIndemnizaciones'>TarifasCamionesIndemnizaciones:</label>
+            <input id='TarifasCamionesIndemnizaciones' type='tel' class='form-control' placeholder='TarifasCamionesIndemnizaciones' value= {{ TarifasCamionesIndemnizaciones }}>
+
+            <label class='label label-default' for='TarifasRemolquesSeguroObligatorio'>TarifasRemolquesSeguroObligatorio:</label>
+            <input id='TarifasRemolquesSeguroObligatorio' type='tel' class='form-control' placeholder='TarifasRemolquesSeguroObligatorio' value= {{ TarifasRemolquesSeguroObligatorio }}>
+
+            <label class='label label-default' for='TarifasRemolquesTodoRiesgo'>TarifasRemolquesTodoRiesgo:</label>
+            <input id='TarifasRemolquesTodoRiesgo' type='tel' class='form-control' placeholder='TarifasRemolquesTodoRiesgo' value= {{ TarifasRemolquesTodoRiesgo }}>
+
+            <label class='label label-default' for='TarifasRemolquesCoberturas'>TarifasRemolquesCoberturas:</label>
+            <input id='TarifasRemolquesCoberturas' type='tel' class='form-control' placeholder='TarifasRemolquesCoberturas' value= {{ TarifasRemolquesCoberturas }}>
+
+            <label class='label label-default' for='TarifasRemolquesIndemnizaciones'>TarifasRemolquesIndemnizaciones:</label>
+            <input id='TarifasRemolquesIndemnizaciones' type='tel' class='form-control' placeholder='TarifasRemolquesIndemnizaciones' value= {{ TarifasRemolquesIndemnizaciones }}>
+
         </article>
 
         <button type='submit' class=' btn btn-default'>Editar</button>

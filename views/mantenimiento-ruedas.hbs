@@ -1,0 +1,54 @@
+<section id='divGeneral' class='centradoListas'>
+      <h1>Ficha Mantenimiento Tractora Ruedas</h1>
+      <form id='formFichaMantenimiento' class='form' action=''>
+            <article class='form-group'>
+                  <label class='label label-default' for='id'>IdMantenimiento:</label>
+                  <input id='id' type='number' readonly class='form-control' placeholder='id' required value= {{id}} >
+
+                  <label class='label label-default' for='Tractora'>Tractora:</label>
+                  <input id='Tractora' type='text' readonly class='form-control' placeholder='Tractora' required value= {{Tractora}} >
+
+                  <label class='label label-default' for='Mantenimiento'>Mantenimiento:</label>
+                  <input id='Mantenimiento' type='text' readonly class='form-control' placeholder='Mantenimiento' value= {{Mantenimiento }} >
+
+                  <label class='label label-default' for='Taller'>Taller:</label>
+                  <input id='Taller' type='text' readonly class='form-control' placeholder='Taller' value= {{Taller}} >
+
+                  <label class='label label-default' for='DireccionTraccion'>Direccion o Traccion:</label>
+                  <input id='DireccionTraccion' type='text' readonly class='form-control' placeholder='DireccionTraccion' value= {{DireccionTraccion}} >
+
+                  <label class='label label-default' for='FechaCambio'>Fecha Cambio:</label>
+                  <input id='FechaCambio' type='text' readonly class='form-control' placeholder='FechaCambio' value= {{FechaCambio}} >
+
+                  <label class='label label-default' for='MarcaRueda'>MarcaRueda:</label>
+                  <input id='MarcaRueda' type='date' readonly class='form-control' placeholder='MarcaRueda' value= {{itv1}} >
+
+                  <label class='label label-default' for='Precio'>Precio:</label>
+                  <input id='Precio' type='date' readonly class='form-control' placeholder='Precio' value= {{Precio}} >
+
+                  <label class='label label-default' for='Posicion'>Posicion:</label>
+                  <input id='Posicion' type='date' readonly class='form-control' placeholder='Posicion' value= {{Posicion}} >
+
+                  <label class='label label-default' for='TipoRueda'>TipoRueda:</label>
+                  <input id='TipoRueda' type='date' readonly class='form-control' placeholder='TipoRueda' value= {{TipoRueda}} >
+
+                  <label class='label label-default' for='KilometrosCambio'>KilometrosCambio:</label>
+                  <input id='KilometrosCambio' type='date' readonly class='form-control' placeholder='KilometrosCambio' value= {{KilometrosCambio}} >
+
+                  <label class='label label-default' for='KilometrosDuracion'>KilometrosDuracion:</label>
+                  <input id='KilometrosDuracion' type='date' readonly class='form-control' placeholder='KilometrosDuracion' value= {{KilometrosDuracion}} >
+
+                  <label class='label label-default' for='MotivosCambio'>MotivosCambio:</label>
+                  <input id='MotivosCambio' type='date' readonly class='form-control' placeholder='MotivosCambio' value= {{MotivosCambio}} >
+
+                  <label class='label label-default' for='GastosTotales'>GastosTotales:</label>
+                  <input id='GastosTotales' type='date' readonly class='form-control' placeholder='GastosTotales' value= {{GastosTotales}} >
+
+            </article>
+
+            <!--<input type='submit' value='Enviar' class='btn btn-default'>-->
+            <!--<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>-->
+            <button id='editarMantenimientoBtn' data-id= {{id}} class='btn btn-default'>Editar</button>
+            <button id='volverListaBtn' class='btn btn-default'>Volver a la lista</button>
+      </form>
+</section>

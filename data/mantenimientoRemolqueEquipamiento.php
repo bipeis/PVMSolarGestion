@@ -2,12 +2,13 @@
 
 include("config.php");
 
-  $campos = $_POST["campos"];
+
+  $id = $_POST["id"];
 
   $conexion = mysql_connect($servidor,$usuario,$contrasena) or trigger_error(mysql_error(),E_USER_ERROR);
   $bd = mysql_select_db($bbdd,$conexion);
 
-  $sql = "SELECT $campos FROM Aseguradoras";
+  $sql = "SELECT * FROM RemolqueMantenimientosEquipamiento WHERE Mantenimiento=$id";
   $resultado = mysql_query($sql,$conexion) or die(mysql_error()."<br>".$sql."<hr>");
 
   $rows = array();

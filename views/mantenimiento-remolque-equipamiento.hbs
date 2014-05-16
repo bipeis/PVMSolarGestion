@@ -1,0 +1,33 @@
+<section id='divGeneral' class='centradoListas'>
+      <h1>Ficha Mantenimiento Remolque Equipamiento</h1>
+      <form id='formFichaMantenimiento' class='form' action=''>
+            <article class='form-group'>
+                  <label class='label label-default' for='id'>IdMantenimiento:</label>
+                  <input id='id' type='number' readonly class='form-control' placeholder='id' required value= {{id}} >
+
+                  <label class='label label-default' for='Remolque'>Remolque:</label>
+                  <input id='Remolque' type='text' readonly class='form-control' placeholder='Remolque' required value= {{Remolque}} >
+
+                  <label class='label label-default' for='Mantenimiento'>Mantenimiento:</label>
+                  <input id='Mantenimiento' type='text' readonly class='form-control' placeholder='Mantenimiento' value= {{Mantenimiento }} >
+
+                  <label class='label label-default' for='Taller'>Taller:</label>
+                  <input id='Taller' type='text' readonly class='form-control' placeholder='Taller' value= {{Taller}} >
+
+                  <label class='label label-default' for='Fecha'>Fecha:</label>
+                  <input id='Fecha' type='text' readonly class='form-control' placeholder='Fecha' value= {{Fecha}} >
+
+                  <label class='label label-default' for='Tipo'>Tipo:</label>
+                  <input id='Tipo' type='text' readonly class='form-control' placeholder='Tipo' value= {{Tipo}} >
+
+                  <label class='label label-default' for='Importe'>Importe:</label>
+                  <input id='Importe' type='text' readonly class='form-control' placeholder='Importe' value= {{Importe}} >
+
+            </article>
+
+            <!--<input type='submit' value='Enviar' class='btn btn-default'>-->
+            <!--<button id='modificarTractoraBtn' class='btn btn-default'>Modificar datos</button>-->
+            <button id='editarMantenimientoBtn' data-id= {{id}} class='btn btn-default'>Editar</button>
+            <button id='volverListaBtn' class='btn btn-default'>Volver a la lista</button>
+      </form>
+</section>

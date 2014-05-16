@@ -1,0 +1,52 @@
+<section id='divGeneral'>
+      <form id='formFichaTractora' class='form'>
+            <article class='form-group'>
+
+                  <label class='label label-default' for='idTractora'>IdTractora:</label>
+                  <input id='idTractora' type='text' readonly class='form-control' placeholder='idTractora' value= {{IdTractora}} >
+
+                  <label class='label label-default' for='matricula'>Matrícula:</label>
+                  <input id='matricula' type='text' class='form-control' placeholder='matricula' value= {{Matricula}} >
+
+                  <label class='label label-default' for='incluidoencontrato'>Incluido en contrato:</label>
+                  <select id='incluidoencontrato' class='form-control' value= {{IncluidoEnContrato}}>
+                        <option label='En Cuota Contrato' value=1 >En Cuota Contrato</option>
+                        <option label='En Cuota Aparte' value=2 >En Cuota Aparte</option>
+                  </select>
+
+                  <label class='label label-default' for='coberaceitemotor'>Cobertura cambio aceite motor:</label>
+                  <select id='coberaceitemotor' class='form-control' value= {{CoberAceiteMotor}}>
+                        <option label='No' value=0 >No</option>
+                        <option label='Sí' value=1 >Sí</option>
+                  </select>
+
+                  <label class='label label-default' for='coberaceitecambios'>Cobertura aceite de caja de cambios:</label>
+                  <select id='coberaceitecambios' class='form-control' value= {{CoberAceiteCambios}}>
+                        <option label='No' value=0 >No</option>
+                        <option label='Sí' value=1 >Sí</option>
+                  </select>
+
+                  <label class='label label-default' for='filtros'>Cobertura filtros:</label>>
+                  <select id='filtros' class='form-control' value= {{CoberFiltros}}>
+                        <option label='No' value=0 >No</option>
+                        <option label='Sí' value=1 >Sí</option>
+                  </select>
+
+                  <label class='label label-default' for='coberotros'>Incluido en contrato:</label>
+                  <select id='coberotros' class='form-control' value= {{CoberOtros}}>
+                        <option label='No' value=0 >No</option>
+                        <option label='Sí' value=1 >Sí</option>
+                  </select>
+
+                  <label class='label label-default' for='condicionescontrato'>Condiciones contrato:</label>
+                  <select id='condicionescontrato' class='form-control' value={{CondicionesContrato}}>
+                        <option label='Kilómetros' value='1'>Kilómetros</option>
+                        <option label='Período' value='2'>Período</option>
+                  </select>
+
+            </article>
+
+            <button id='guardarCambiosTractoraMantenimientosBtn' data-idtractora= {{IdTractora}} class='btn btn-default'>Guardar cambios</button>
+            <button id='cancelEditMantenimientosBtn' data-idtractora= {{IdTractora}}  class='btn btn-default'>Cancelar</button>
+      </form>
+</section>

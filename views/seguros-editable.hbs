@@ -1,0 +1,72 @@
+<section id='divGeneral'>
+      <h2>Seguro Obligatorio de {{Tipo}} con Id {{Id}} </h2>
+      <form id='formFicha{{Tipo}}' class='form' action=''>
+            <article class='form-group'>
+                  <label class='label label-default' for='Id'>Id:</label>
+                  <input id='Id' type='number' readonly class='form-control' placeholder='Id' required value= {{Id}} >
+
+                  <label class='label label-default' for='Aseguradora'>Aseguradora:</label>
+                  <select id='Aseguradora' class='form-control' value= {{Aseguradora}}>
+                        <option label='Aseguradora1' value='1'>Aseguradora1</option>
+                        <option label='Aseguradora2' value='2'>Aseguradora1</option>
+                  </select>
+
+                  <label class='label label-default' for='Agencia'>Agencia:</label>
+                  <input id='Agencia' type='text' class='form-control' placeholder='Agencia' value= {{Agencia}} >
+
+                  <label class='label label-default' for='Poliza'>Poliza:</label>
+                  <input id='Poliza' type='text' class='form-control' placeholder='Poliza' value= {{Poliza}} >
+
+                  <label class='label label-default' for='FechaContratacion'>FechaContratacion:</label>
+                  <input id='FechaContratacion' type='date' class='form-control' placeholder='FechaContratacion' value= {{FechaContratacion}} >
+
+                  <label class='label label-default' for='FechaFinalizacion'>FechaFinalizacion:</label>
+                  <input id='FechaFinalizacion' type='date' class='form-control' placeholder='FechaFinalizacion' value= {{FechaFinalizacion}} >
+
+                  <label class='label label-default' for='CuotaAnual'>CuotaAnual:</label>
+                  <input id='CuotaAnual' type='text' class='form-control' placeholder='CuotaAnual' value= {{CuotaAnual}} >
+
+                  <label class='label label-default' for='FormaPago'>FormaPago:</label>
+                  <input id='FormaPago' type='text' class='form-control' placeholder='FormaPago' value= {{FormaPago}} >
+
+            </article>
+      </form>
+
+      <h2>Seguro TodoRiesgo de Camión con Id {{Id}} </h2>
+      <form id='formFichaTractora' class='form' action=''>
+            <article class='form-group'>
+
+                  <label class='label label-default' for='AseguradoraT'>Aseguradora:</label>
+                  <input id='AseguradoraT' type='text' class='form-control' placeholder='Aseguradora' value= {{AseguradoraTodo}} >
+
+                  <label class='label label-default' for='AgenciaT'>Agencia:</label>
+                  <input id='AgenciaT' type='text' class='form-control' placeholder='Agencia' value= {{AgenciaTodo}} >
+
+                  <label class='label label-default' for='PolizaT'>Poliza:</label>
+                  <input id='PolizaT' type='text' class='form-control' placeholder='Poliza' value= {{PolizaTodo}} >
+
+                  <label class='label label-default' for='FechaContratacionT'>FechaContratacion:</label>
+                  <input id='FechaContratacionT' type='date' class='form-control' placeholder='FechaContratacion' value= {{FechaContratacionTodo}} >
+
+                  <label class='label label-default' for='FechaFinalizacionT'>FechaFinalizacion:</label>
+                  <input id='FechaFinalizacionT' type='date' class='form-control' placeholder='FechaFinalizacion' value= {{FechaFinalizacionTodo}} >
+
+                  <label class='label label-default' for='CuotaAnualT'>CuotaAnual:</label>
+                  <input id='CuotaAnualT' type='text' class='form-control' placeholder='CuotaAnual' value= {{CuotaAnualTodo}} >
+
+                  <label class='label label-default' for='FormaPagoT'>FormaPago:</label>
+                  <input id='FormaPagoT' type='text' class='form-control' placeholder='FormaPago' value= {{FormaPagoTodo}} >
+
+                  <label class='label label-default' for='Asistencia'>Asistencia:</label>
+                  <input id='Asistencia' type='text' class='form-control' placeholder='Asistencia' value= {{Asistencia}} >
+
+                  <label class='label label-default' for='Coberturas'>Coberturas:</label>
+                  <input id='Coberturas' type='text' class='form-control' placeholder='Coberturas' value= {{Coberturas}} >
+
+            </article>
+
+
+            <button id='guardarCambiosTractoraSegurosBtn' data-idtractora= {{Id}} class='btn btn-default'>Guardar cambios</button>
+            <button id='cancelEditSegurosBtn' data-idtractora= {{Id}}  class='btn btn-default'>Cancelar</button>
+      </form>
+</section>

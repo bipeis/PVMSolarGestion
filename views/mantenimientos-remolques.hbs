@@ -1,13 +1,13 @@
 <section id='divTabla' class='centradoListas'>
-	<h1>Mantenimientos de {{tractremolq}} con Id {{IdTractora}} </h1>
-    <table id='listadoMantenimientos{{tractremolq}}' class='table table-striped'>
+	<h1>Mantenimientos de Remolque con Id {{IdRemolque}} </h1>
+    <table id='listadoMantenimientos' class='table table-striped'>
     	<thead>
             <tr>
                 <th>ID</th>
                 <th>Fecha</th>
                 <th>Tipo</th>
                 <th>Taller</th>
-                <th>Tractora</th>
+                <th>Remolque</th>
                 <th>Importe</th>
                 <th>Acciones</th>
             </tr>
@@ -19,10 +19,10 @@
                 <td> {{Fecha}} </td>
                 <td> {{Tipo}} </td>
         		<td> {{Taller}} </td>
-                <td> {{IdTractora}} </td>
+                <td> {{IdRemolque}} </td>
         		<td> {{Importe}} </td>
         		<td>
-        			<button data-id= {{Id}} data-tipo={{Tipo}} class='btn btn-mini btn-ficha'>Ficha</button>
+        			<button data-id= {{IdMantenimiento}} data-tipo={{Tipo}} class='btn btn-mini btn-ficha'>Ficha</button>
               		<button class='btn btn-mini btn-danger'>Borrar</button>
               	</td>
              </tr>

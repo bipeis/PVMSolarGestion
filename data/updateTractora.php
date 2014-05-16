@@ -14,7 +14,6 @@ include("config.php");
   $conexion = mysql_connect($servidor,$usuario,$contrasena) or trigger_error(mysql_error(),E_USER_ERROR);
   $bd = mysql_select_db($bbdd,$conexion);
 
-
   $sql = "UPDATE Tractoras SET Matricula='$matr', Marca='$marc', Modelo='$model', CatEur='$cateur',
    ValorCompra='$valorcompra', ITV1='$itv1', ITV2='$itv2' WHERE IdTractora=$id";
   $resultado = mysql_query($sql,$conexion) or die(mysql_error()."<br>".$sql."<hr>");

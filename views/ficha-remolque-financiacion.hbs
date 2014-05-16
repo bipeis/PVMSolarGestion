@@ -1,9 +1,9 @@
 <section id='divGeneral'>
-      <form id='formFichaTractora' class='form'>
+      <form id='formFichaRemolque' class='form'>
             <article class='form-group'>
 
-                  <label class='label label-default' for='idTractora'>IdTractora:</label>
-                  <input id='idTractora' type='text' readonly class='form-control' placeholder='idTractora' value= {{IdTractora}} >
+                  <label class='label label-default' for='IdRemolque'>IdRemolque:</label>
+                  <input id='idTractora' type='text' readonly class='form-control' placeholder='IdRemolque' value= {{IdRemolque}} >
 
                   <label class='label label-default' for='matricula'>Matrícula:</label>
                   <input id='matricula' type='text' readonly class='form-control' placeholder='matricula' value= {{Matricula}} >
@@ -16,6 +16,9 @@
                         <option label='Leasing' value='Leasing'>Leasing</option>
                         <option label='Renting' value='Renting'>Renting</option>
                   </select>
+
+                  <label class='label label-default' for='ValorCompra'>Valor de compra:</label>
+                  <input id='ValorCompra' type='date' readonly class='form-control' placeholder='ValorCompra' value= {{ValorCompra}} >
 
                   <label class='label label-default' for='fechainicio'>Fecha Inicio Contrato:</label>
                   <input id='fechainicio' type='date' readonly class='form-control' placeholder='fechainicio' value= {{FinanciacionFechaInicio}} >
@@ -38,7 +41,7 @@
 
             </article>
 
-            <button id='editarTractoraFinanciacionBtn' data-id= {{IdTractora}} class='btn btn-default'>Editar</button>
-            <button id='volverListaTractorasBtn' class='btn btn-default'>Volver a la lista</button>
+            <button id='editarRemolqueFinanciacionBtn' data-id= {{IdRemolque}} class='btn btn-default'>Editar</button>
+            <button id='volverListaDesdeFinanciacionBtn' class='btn btn-default'>Volver a la lista</button>
       </form>
 </section>

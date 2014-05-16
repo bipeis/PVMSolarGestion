@@ -16,7 +16,7 @@ include("config.php");
   $bd = mysql_select_db($bbdd,$conexion);
 
 
-  $sql = "UPDATE Tractoras SET Matricula='$matr', Marca='$marc', FinanciacionEntidad='$ent', FinanciacionContrato='$contr',
+  $sql = "UPDATE Tractoras SET Matricula='$matr', FinanciacionEntidad='$ent', FinanciacionContrato='$contr',
    FinanciacionFechaInicio='$finicio', FinanciacionFechaFin='$ffin', FinanciacionCuotaMensual='$cmensual', FInanciacionCuotaResidual='$cresidual', SeguroIncluido='$segincluido' WHERE IdTractora=$id";
   $resultado = mysql_query($sql,$conexion) or die(mysql_error()."<br>".$sql."<hr>");
 
